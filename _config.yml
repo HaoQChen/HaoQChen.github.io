@@ -61,6 +61,16 @@ kramdown:
 # Disqus settings
 #disqus_username: hux
 
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: 923a9d35ef54bd4216a7                            #生成的clientID
+  clientSecret: 594c6670338796a5e53ef61f9074b41b02cb92ad    #生成的clientSecret
+  repo: haoqchen.github.io    #仓库名称
+  owner: HaoQChen    #github用户名
+  admin: HaoQChen
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
 # Netease settings
 netease_comment: false
 
