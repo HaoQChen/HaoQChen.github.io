@@ -1,31 +1,16 @@
-> 写写代码，做做设计，  
-> 离开世界之前，一切都是过程。
+> Think different
+> Stay Hungry, Stay Foolish
 
-Hey，我是黄玄，病毒种，进化程度不明，多出没于[博客](https://huangxuan.me)、[微博](weibo.com/huxpro)、[知乎](https://www.zhihu.com/people/huxpro/pins/posts)、[Twitter](https://twitter.com/Huxpro/)、[Github](http://github.com/huxpro)、[Medium](https://medium.com/@Huxpro) 等地带，绝招尚在开发中。
+我是白夜行的狼，目前是华南理工大学自动化学院研三在读学生。白夜行的狼这个名字来源于《白夜行》中的一句话，我自己稍加改动后如下：
+```
+我本是一匹孤独的狼，天空中没有太阳，总是黑夜。直到玥的出现，虽然没有太阳那么明亮，但对我来说已经足够，凭借着这份光，我便能看到前方。我从来就没有太阳，所以很害怕失去，她像萤火虫一样飘忽不定，我就一直在追寻着。
+```
 
-职业是软件工程师，[Web 工会](https://medium.com/ben-and-dion/team-web-3315aa447fb2#.359a9c6cl)活跃成员。目前在 [Facebook](https://www.facebook.com/) 写 [Reason](https://reasonml.github.io/) 与 [Messenger.com](http://messenger.com/) ，曾被招募为淘宝网 · [阿里旅行](http://alitrip.com)前端工程师、微影时代 · [微票儿](http://www.wepiao.com/?r=movie)前端基础工程团队负责人、[饿了么](https://ele.me/) · 大前端团队 · [PWA 顾问](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509)。
+生平有两大偶像，一个是看什么都不顺眼，觉得大部分人都是垃圾的乔教主；另一个是“带不动队友，没办法一打九，是我太菜”、”输的时候，你说什么都像是借口“的faker。虽然是个工科生，但内心感性而矛盾，时常纠结于这两个偶像对待生活的态度。
 
-一些作品和开源软件项目，👉 戳 [Portfolio](/portfolio)、[Github](http://github.com/huxpro)、[演说.io](https://zhuanlan.zhihu.com/p/21280918)。 
+如果顺利毕业，2019年6月份将奔赴深圳一家与无人车传感器相关的公司，为自己的梦想打拼。
+
+除了github.io，我也活跃在[CSDN博客中](https://blog.csdn.net/u013834525)。必须要吐槽一下的是，CSDN的代码竟然在Ubuntu系统下显示有问题，官方还慢吞吞的很久没把这个bug改过来，而且竟然改变了tab的空格数，导致有部分代码要改～～～～最后被迫来了github.io。一些开源的工程放在了[Github](https://github.com/HaoQChen)
 
 
-##### Talks
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf CN 上海 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI 广州 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux 北京 2017
-- 炒冷饭 · PWA 到底是个什么玩意？· Baidu HQ 北京 2017
-- [Service Worker 101][5] · GDG DevFest 北京 2016
-- [Progressive Web App，复兴序章][4] · [QCon 上海 2016](http://2016.qconshanghai.com/presentation/3111)
-- Progressive Web App 之我见 · GDG IO Redux 北京 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript 模块化七日谈][1] · 2015
-
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
