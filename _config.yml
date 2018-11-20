@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: HaoQ_Chen@163.com
 description: "终于拥有属于自己的博客啦"
 keyword: "白夜行的狼, 个人网站, 个人博客, SLAM, 激光雷达, C++, 机器人"
-url: ""              # your host, for absolute URL
+url: "https://haoqchen.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,8 +13,8 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     白夜行的狼
-zhihu_username:     白夜行的狼
+weibo_username:     1952114745
+zhihu_username:     HaoQ_Chen
 github_username:    HaoQChen
 #twitter_username:   
 #facebook_username:  huxpro
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+#disqus_username: hux
 
 # Netease settings
 netease_comment: false
