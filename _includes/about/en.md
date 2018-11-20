@@ -1,5 +1,5 @@
 
-> Think different
+> Think different  
 > Stay Hungry, Stay Foolish
 
 我是白夜行的狼，目前是华南理工大学自动化学院研三在读学生。白夜行的狼这个名字来源于《白夜行》中的一句话，我自己稍加改动后如下：
