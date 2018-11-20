@@ -1,9 +1,9 @@
 # Site settings
 title: 白夜行的狼
 SEOTitle: 白夜行的狼的博客
-header-img: img/thinkdifferent.jpg
+header-img: img/penguin.jpg
 email: HaoQ_Chen@163.com
-description: "终于拥有属于自己的博客啦"
+description: "Think Different"
 keyword: "白夜行的狼, 个人网站, 个人博客, SLAM, 激光雷达, C++, 机器人"
 url: "https://haoqchen.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
