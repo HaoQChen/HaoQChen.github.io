@@ -4,7 +4,7 @@ title:      各种排序算法的C++实现（冒泡排序、选择排序、插�
 subtitle:   数据结构与算法
 date:       2018-10-10
 author:     白夜行的狼
-header-img: img/in_post/all_kind_of_sort/post-bg-infinity.jpg
+header-img: img/in_post/all_kind_of_sort/black.jpg
 catalog: true
 tags:
     - 排序算法
@@ -29,7 +29,7 @@ tags:
 另外，如果大家也想写一下，然后牛客网这里有一道题，大家可以到这里来测试：
 
 [牛客网排序算法编程题](https://www.nowcoder.com/questionTerminal/508f66c6c93d4191ab25151066cb50ef)  
-```cpp
+```
 测试数据：
 //11 2 5 4 1 3 9 7 8 6 11 10
 
