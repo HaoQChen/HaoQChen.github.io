@@ -24,15 +24,6 @@ CSDN_username:      u013834525
 
 
 
-#      Search    
-simple_jekyll_search:
-# 是否支持全文搜索
-fulltext: false
-# 最多显示多少条搜索结果
-limit: 10
-
-
-
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
