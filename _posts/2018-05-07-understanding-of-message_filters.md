@@ -20,8 +20,8 @@ tags:
 
 # 1. 两者的关系
 　　message_filters，顾名思义是消息过滤器；tf::MessageFilter，顾名思义是tf下的消息过滤器。消息过滤器为什么要用tf呢？tf::MessageFilter可以订阅任何的ROS消息，然后将其缓存，直到这些消息可以转换到目标坐标系，然后进行相应的处理（一般在回调函数中处理）。说白了就是消息订阅+坐标转换。实际上，后者继承于前者：
-![relation](/img/understanding_of_message_filters/relation.png)
-![message_filters](/img/understanding_of_message_filters/message_filters.png)
+![relation](/img/in_post/understanding_of_message_filters/relation.png)
+![message_filters](/img/in_post/understanding_of_message_filters/message_filters.png)
 
 # 2. 使用实例
 a. amcl中激光雷达的回调
@@ -31,10 +31,10 @@ message_filters::Subscriber<sensor_msgs::LaserScan>* laser_scan_sub_;
 tf::MessageFilter<sensor_msgs::LaserScan>* laser_scan_filter_;
 
 laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
-laser_scan_filter_ = new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_, 
-                                                        *tf_, 
-                                                        odom_frame_id_, 
-                                                        100);
+laser_scan_filter_ = new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_, 
+                                                                   *tf_,
+                                                                   odom_frame_id_,
+                                                                   100);
 
 laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived, this, _1));
 
@@ -56,7 +56,7 @@ laser_notifier_.registerCallback(boost::bind(&LegDetector::laserCallback, this, 
 laser_notifier_.setTolerance(ros::Duration(0.01));
 
 void laserCallback(const sensor_msgs::LaserScan::ConstPtr& scan){
-    tfl_.transformPoint(fixed_frame, loc, loc);
+    tfl_.transformPoint(fixed_frame, loc, loc);
 }
 ```
 
@@ -67,9 +67,9 @@ class PoseDrawer
 public:
   PoseDrawer() : tf_(),  target_frame_("turtle1")
   {
-    point_sub_.subscribe(n_, "turtle_point_stamped", 10);
-    tf_filter_ = new tf::MessageFilter<geometry_msgs::PointStamped>(point_sub_, tf_, target_frame_, 10);
-    tf_filter_->registerCallback( boost::bind(&PoseDrawer::msgCallback, this, _1) );
+      point_sub_.subscribe(n_, "turtle_point_stamped", 10);
+      tf_filter_ = new tf::MessageFilter<geometry_msgs::PointStamped>(point_sub_, tf_, target_frame_, 10);
+      tf_filter_->registerCallback( boost::bind(&PoseDrawer::msgCallback, this, _1) );
   } ;
 
 private:
@@ -82,25 +82,24 @@ private:
   //  Callback to register with tf::MessageFilter to be called when transforms are available
   void msgCallback(const boost::shared_ptr<const geometry_msgs::PointStamped>& point_ptr) 
   {
-    geometry_msgs::PointStamped point_out;
-    try 
-    {
-      tf_.transformPoint(target_frame_, *point_ptr, point_out);
-    }
-    catch (tf::TransformException &ex) 
-    {
-      printf ("Failure %s\n", ex.what()); //Print exception which was caught
-    }
+      geometry_msgs::PointStamped point_out;
+      try 
+      {
+          tf_.transformPoint(target_frame_, *point_ptr, point_out);
+      }
+      catch (tf::TransformException &ex) 
+      {
+          printf ("Failure %s\n", ex.what()); //Print exception which was caught
+      }
   };
 
 };
 
-
 int main(int argc, char ** argv)
 {
-  ros::init(argc, argv, "pose_drawer"); //Init ROS
-  PoseDrawer pd; //Construct class
-  ros::spin(); // Run until interupted 
+    ros::init(argc, argv, "pose_drawer"); //Init ROS
+    PoseDrawer pd; //Construct class
+    ros::spin(); // Run until interupted 
 };
 ```
 
@@ -120,15 +119,15 @@ int main(int argc, char ** argv)
 * 给tf::MessageFilter注册callback
 * 编写callback，并在回调中完成坐标转换。至此完成消息订阅+坐标转换
 
-在看message_filters的主页过程中发现，它可以做的远比以上说的多，比如：
+在看message_filters的主页过程中发现，它可以做的远比以上说的多，比如：  
 An example is the time synchronizer, which takes in messages of different types from multiple sources, and outputs them only if it has received a message on each of those sources with the same timestamp.
 
 # 参考
-[ROS官网tf::MessageFilter教程](http://wiki.ros.org/tf/Tutorials/Using%20Stamped%20datatypes%20with%20tf::MessageFilter)
-[ROS官方tf::MessageFilter文档](http://docs.ros.org/api/tf/html/c++/classtf_1_1MessageFilter.html)
-[ROS官网message_filters主页](http://wiki.ros.org/message_filters)
-[ROS官方message_filters::SimpleFilter文档](http://docs.ros.org/api/message_filters/html/c++/classmessage__filters_1_1SimpleFilter.html)
-[ROS一些传感器数据读取融合问题的思考](https://www.cnblogs.com/yhlx125/p/6818148.html)
-[同时订阅两个话题？看到没测试过](https://answers.ros.org/question/193120/how-to-connect-a-tfmessagefilter-to-two-subscribers/)
+[ROS官网tf::MessageFilter教程](http://wiki.ros.org/tf/Tutorials/Using%20Stamped%20datatypes%20with%20tf::MessageFilter)  
+[ROS官方tf::MessageFilter文档](http://docs.ros.org/api/tf/html/c++/classtf_1_1MessageFilter.html)  
+[ROS官网message_filters主页](http://wiki.ros.org/message_filters)  
+[ROS官方message_filters::SimpleFilter文档](http://docs.ros.org/api/message_filters/html/c++/classmessage__filters_1_1SimpleFilter.html)  
+[ROS一些传感器数据读取融合问题的思考](https://www.cnblogs.com/yhlx125/p/6818148.html)  
+[同时订阅两个话题？看到没测试过](https://answers.ros.org/question/193120/how-to-connect-a-tfmessagefilter-to-two-subscribers/)  
 
 **版权声明：未经允许不得以任何形式转载**
