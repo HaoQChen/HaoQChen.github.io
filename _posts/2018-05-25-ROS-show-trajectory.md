@@ -115,7 +115,7 @@ geometry_msgs/PoseStamped[] poses
 # 3. 未完待续
 看到github上一个开源项目，上面有更多可视化的图形～～～～有兴趣可以取看看：
 
-![github上的rviz_visual_tools](https://github.com/PickNikRobotics/rviz_visual_tools)
+[github上的rviz_visual_tools](https://github.com/PickNikRobotics/rviz_visual_tools)
 
 据说nav_msgs/Odometry也可以～～没时间研究了
 
@@ -123,3 +123,5 @@ geometry_msgs/PoseStamped[] poses
 <http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Basic%20Shapes>  
 <http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Points%20and%20Lines>  
 <https://blog.csdn.net/ktigerhero3/article/details/70256437>  
+
+**版权声明：未经允许不得以任何形式转载**
