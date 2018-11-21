@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      C++的new、delete需要注意的一点：使用危险函数导致的越界
-subtitle:   深入理解Ｃ＋＋
+subtitle:   深入理解C++
 date:       2018-09-28
 author:     白夜行的狼
-header-img: img/in_post/new_delete_dangerous/post-bg-infinity.jpg
+header-img: img/in_post/new_delete_dangerous/404-bg.jpg
 catalog: true
 tags:
     - 危险函数
