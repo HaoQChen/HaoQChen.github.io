@@ -102,6 +102,7 @@ int main(int argc, char** argv){
 
 2. 如果5秒内按下了Ctrl+C，则会调用MySigintHandler，然后ros::shutdown();从终端信息我们可以看到，调用ros::shutdown();后，所有ROS服务已经不可以使用，连ROS_INFO也是不能用的，输出信息失败。所以在程序中要密切注意退出部分的程序不要使用ROS的东西。
 ![within5s](/img/in_post/ROS_node_init/within5s.png)
+
 # 参考
 [ROS官网：编写简单的消息发布器和订阅器 (C++)](http://wiki.ros.org/cn/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)  
 [ROS官网：roscppOverviewInitialization and Shutdown](http://wiki.ros.org/roscpp/Overview/Initialization%20and%20Shutdown)  
