@@ -4,7 +4,7 @@ title:      各种排序算法的C++实现（冒泡排序、选择排序、插�
 subtitle:   数据结构与算法
 date:       2018-10-10
 author:     白夜行的狼
-header-img: img/in_post/all_kind_of_sort/black.jpg
+header-img: img/in_post/all_kind_of_sort/black.jpeg
 catalog: true
 tags:
     - 排序算法
