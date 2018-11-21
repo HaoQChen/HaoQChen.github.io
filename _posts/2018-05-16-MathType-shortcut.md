@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      MathType常用快捷键
-subtitle:   ROS学习之路
+subtitle:   磨刀不误砍柴工
 date:       2018-05-16
 author:     白夜行的狼
 header-img: img/in_post/MathType_shortcut/home-bg-o.jpg
@@ -34,11 +34,11 @@ tags:
 
 二阶求导：Ctrl + alt + ' + '（按两次'）
 
-定积分：Ctrl + I ![ctrlI](img/in_post/MathType_shortcut/ctrlI.png)
+定积分：Ctrl + I ![ctrlI](/img/in_post/MathType_shortcut/ctrlI.png)
 
-斜杠分式：Ctrl + / ![ctrl1](img/in_post/MathType_shortcut/ctrl1.png)
+斜杠分式：Ctrl + / ![ctrl1](/img/in_post/MathType_shortcut/ctrl1.png)
 
-上下分式：Ctrl + f ![ctrlf](img/in_post/MathType_shortcut/ctrlf.png)
+上下分式：Ctrl + f ![ctrlf](/img/in_post/MathType_shortcut/ctrlf.png)
 
 # 括号：
 括号（）：Ctrl + 9
@@ -48,7 +48,7 @@ tags:
 大括号{}：Ctrl + {
 
 # 希腊字母：
-![greece](img/in_post/MathType_shortcut/greece.png)  
+![greece](/img/in_post/MathType_shortcut/greece.png)  
 如上图所示，先按下Ctrl + G，放开后紧接着按下希腊字母对应的英文字母，大写的话则加一个Shift。
 
 # 多行公式的
@@ -60,7 +60,7 @@ tags:
 
 # 自定义公式及符号
 　　对于已经编辑好的公式或者符号，而且经常用到，不想重复地敲，可以将其选中，然后直接拖动到工具栏即可。对于工具栏中的公式和符号，可以直接右键->properties（属性）设置快捷方式。  
-![self_set](img/in_post/MathType_shortcut/self_set.png)  
+![self_set](/img/in_post/MathType_shortcut/self_set.png)  
 另外，如果你经常要使用一些符号，比如θ，那你可以先用鼠标点一个θ。然后在Preferences->Customize Keyboard->Recently....中看到最近使用的这个θ，然后在下面就可以为其设置一个快捷键，比如Ctrl + Shift + T。以后就直接可以用快捷键调出θ了
 
 # 参考：
