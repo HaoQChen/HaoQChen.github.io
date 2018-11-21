@@ -20,18 +20,18 @@ tags:
 
 # 1. 两者的关系
 　　message_filters，顾名思义是消息过滤器；tf::MessageFilter，顾名思义是tf下的消息过滤器。消息过滤器为什么要用tf呢？tf::MessageFilter可以订阅任何的ROS消息，然后将其缓存，直到这些消息可以转换到目标坐标系，然后进行相应的处理（一般在回调函数中处理）。说白了就是消息订阅+坐标转换。实际上，后者继承于前者：
-![relation](/img/in_post/understanding_of_message_filters/relation.png)
-![message_filters](/img/in_post/understanding_of_message_filters/message_filters.png)
+![relation](/img/in_post/post_understanding_of_message_filters/relation.png)
+![message_filters](/img/in_post/post_understanding_of_message_filters/message_filters.png)
 
 # 2. 使用实例
-a. amcl中激光雷达的回调
+## a. amcl中激光雷达的回调
 ```cpp
 tf_ = new TransformListenerWrapper();
 message_filters::Subscriber<sensor_msgs::LaserScan>* laser_scan_sub_;
 tf::MessageFilter<sensor_msgs::LaserScan>* laser_scan_filter_;
 
 laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
-laser_scan_filter_ = new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_, 
+laser_scan_filter_ = new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_,
                                                                    *tf_,
                                                                    odom_frame_id_,
                                                                    100);
@@ -39,11 +39,11 @@ laser_scan_filter_ = new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_s
 laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived, this, _1));
 
 void AmclNode::laserReceived(const sensor_msgs::LaserScanConstPtr& laser_scan){
-    this->tf_->transformPose(base_frame_id_, ident, laser_pose);//这个函数的意思是，ident在base_frame_id下的表示为laser_pose
+    this->tf_->transformPose(base_frame_id_, ident, laser_pose);//这个函数的意思是，ident在base_frame_id下的表示为laser_pose
 }
 ```
 
-b. leg_detector中激光雷达的回调
+## b. leg_detector中激光雷达的回调
 ```cpp
 TransformListener tfl_;
 message_filters::Subscriber<sensor_msgs::LaserScan> laser_sub_;
@@ -60,7 +60,7 @@ void laserCallback(const sensor_msgs::LaserScan::ConstPtr& scan){
 }
 ```
 
-c. 参考一中的示例
+## c. 参考一中的示例
 ```cpp
 class PoseDrawer
 {
@@ -105,7 +105,7 @@ int main(int argc, char ** argv)
 
 # 3. 头文件
 以上的程序都需要添加以下头文件：
-```cpp
+```c
 #include "ros/ros.h"
 #include "tf/transform_listener.h"
 #include "tf/message_filter.h"
