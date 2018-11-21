@@ -13,7 +13,8 @@ tags:
     - link_directories
     - 相对路径
 --- 
-本文永久更新地址：<https://haoqchen.github.io/2018/04/26/CMakeLists-setting-relative-path/>  
+本文永久更新地址：<https://haoqchen.github.io/2018/04/26/CMakeLists-setting-relative-path/>
+
 先看我的CMakeLists文件：
 ```cmake
 link_directories(libs/X64)
@@ -36,6 +37,7 @@ target_link_libraries(show_order
     ${catkin_LIBRARIES}
 )
 ```
+
 因为我这里用到了科大讯飞的一个链接库 libmsc.so，放到了我package目录下的libs/X64文件夹下，出于移植的考虑，不想使用绝对路径。所以这里使用link_directories添加相对路径的目录，然后在target_link_libraries中添加库目录名字。
 
 **注意：**
