@@ -6,7 +6,7 @@
   visibility: hidden;
   width: 42px;
   height: 43px;
-  background: url("../img/to_top/to_top.png") no-repeat 50% 0;
+  background: url("../img/to_top.png") no-repeat 50% 0;
   opacity: 0;
   -webkit-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -webkit-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
   -moz-transition: visibility 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), opacity 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335), -moz-transform 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.335);
@@ -22,7 +22,7 @@
   display: block;
   margin-top: 48px;
   height: 14px;
-  background: url("../img/to_top/to_top.png") no-repeat 50% 0px;
+  background: url("../img/to_top.png") no-repeat 50% 0px;
   opacity: 0.5;
   -webkit-transition: -webkit-transform 0.2s;
   -moz-transition: -moz-transform 0.2s;
