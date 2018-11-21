@@ -7,10 +7,10 @@ author:     白夜行的狼
 header-img: img/in_post/heteromery/black.jpeg
 catalog: true
 tags:
-    - 扑克牌
-    - 判断输赢
-    - 四条、顺子、葫芦、两对、三条、散排
-    - 小A
+    - 小米软件开发
+    - 找异数
+    - 字符串处理
+    - 进制转换
 --- 
 
 # 0. 写在最前面
