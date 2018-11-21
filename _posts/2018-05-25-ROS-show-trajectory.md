@@ -7,9 +7,11 @@ author:     白夜行的狼
 header-img: img/in_post/ROS_show_trajectory/post-bg-infinity.jpg
 catalog: true
 tags:
-    - MathType
-    - MathType6.9
-    - 快捷键
+    - visualization_msgs/Marker
+    - rviz轨迹
+    - ROS轨迹
+    - 机器人轨迹路径
+    - nav_msgs/Path
 --- 
 
 # 0. 写在最前面
