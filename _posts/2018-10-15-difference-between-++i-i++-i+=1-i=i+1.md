@@ -4,7 +4,7 @@ title:      ++i、i++、i+=1、i=i+1的区别
 subtitle:   深入理解C++
 date:       2018-10-15
 author:     白夜行的狼
-header-img: img/post-bg-ios9-web.jpg
+header-img: img/post-bg-halting.jpg
 catalog: true
 tags:
     - 自增
@@ -38,7 +38,7 @@ ptr pointer缩写 即指针
 左值一般是可以放在赋值符号左边的值，其在内存中有实体；右值一般只能放在赋值符号右边，不具有内存实体，无法通过取地址获得相应对象。
 
 下面将通过实际代码来找出两者的区别，考虑如下类：
-```
+```cpp
 class Point{
     int x_;
     int y_;
@@ -111,7 +111,7 @@ void Point::DisplayPoint()
 ```
 
 ### 2.1.1 效率检测
-```
+```cpp
 Point a(1,1);
 cout << endl << "this is a++: " << endl;
 a++;
@@ -123,7 +123,7 @@ cout << endl << "this is ++a: " << endl;
 可以看到，a++将会有两次的拷贝构造与析构的调用，效率非常低。
 
 ### 2.1.2 左右值检测
-```
+```cpp
 Point b(2, 2);
 Point* c;
 cout << endl << "this is &b: " << &b << endl;
