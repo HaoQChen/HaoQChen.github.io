@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文永久更新地址：[](https://haoqchen.github.io/2018/10/15/difference-between-++i-i++-i+=1-i=i+1/)  
+本文永久更新地址：<https://haoqchen.github.io/2018/10/15/difference-between-++i-i++-i+=1-i=i+1/>  
 面试被问到，上面这四个有什么区别。总结了一下，如果觉得还不错就关注一下博主呗，博主会长期更新自己的学习和收获。
 
 # 1. 首先对于内置类型，对于现代编译器而言，这四个的效率都是没有区别的
