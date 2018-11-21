@@ -4,7 +4,7 @@ title:      ++i、i++、i+=1、i=i+1的区别
 subtitle:   深入理解C++
 date:       2018-10-15
 author:     白夜行的狼
-header-img: img/post-bg-halting.jpg
+header-img: img/in_post/i_plus_plus/post-bg-halting.jpg
 catalog: true
 tags:
     - 自增
@@ -15,15 +15,15 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文永久更新地址：<https://haoqchen.github.io/2018/10/15/difference-between-++i-i++-i+=1-i=i+1/>  
+本文持续更新地址：<https://haoqchen.github.io/2018/10/15/difference-between-++i-i++-i+=1-i=i+1/>  
 面试被问到，上面这四个有什么区别。总结了一下，如果觉得还不错就关注一下博主呗，博主会长期更新自己的学习和收获。
 
 # 1. 首先对于内置类型，对于现代编译器而言，这四个的效率都是没有区别的
 我在VS2013下进行编译运行，然后调试->窗口->反汇编，查看汇编代码后发现，这四个都是一样的。。。。。  
-![++int](/img/in_post/post_i_plus_plus/plus_plus_int.png)  
-![int++](/img/in_post/post_i_plus_plus/int_plus_plus.png)  
-![int=int+1](/img/in_post/post_i_plus_plus/int_int_plus.png)  
-![int+=1](/img/in_post/post_i_plus_plus/int_plus_one.png)  
+![++int](/img/in_post/i_plus_plus/plus_plus_int.png)  
+![int++](/img/in_post/i_plus_plus/int_plus_plus.png)  
+![int=int+1](/img/in_post/i_plus_plus/int_int_plus.png)  
+![int+=1](/img/in_post/i_plus_plus/int_plus_one.png)  
 dword 双字 就是四个字节  
 ptr pointer缩写 即指针  
 \[]里的数据是一个地址值，这个地址指向一个双字型数据  
@@ -119,7 +119,7 @@ cout << endl << "this is ++a: " << endl;
 ++a;
 ```
 将会输出：  
-![code out a++&++a](/img/in_post/post_i_plus_plus/different_a++&++a.png)
+![code out a++&++a](/img/in_post/i_plus_plus/different_a++&++a.png)
 可以看到，a++将会有两次的拷贝构造与析构的调用，效率非常低。
 
 ### 2.1.2 左右值检测
@@ -136,7 +136,7 @@ c = &(b++);
 cout << c << endl;
 ```
 将会输出：  
-![code out left or right](/img/in_post/post_i_plus_plus/left_or_right.png)
+![code out left or right](/img/in_post/i_plus_plus/left_or_right.png)
 可以看到++b返回的对象指针跟b原来的地址是一样的，而b++返回的对象地址跟原来的b地址不一样（应该是临时对象的地址），虽然可以取到地址，但当成左值将有可能导致错误。比如b++ = c;就不会将c给b，达不到原来的目的。为此，我们应该将后置的++函数返回值定义为const类型，就可以避免这种当成左值情况出现：const Point Point::operator++(int)。另外发现返回temp的引用可以减少一次拷贝和析构，但是不建议返回局部变量的引用！！因为函数退出，局部变量将析构，引用就会指向不确定内存。
 
 另外不要在一条语句中使用多个++，因为在不同系统中对这样的情况处理可能不一样，比如y = (4 + x++) + (6 + x++)。这条语句只能保证程序执行到下一条语句之前，x被递增两次，并不能保证4 + x++后立即自增。

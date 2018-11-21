@@ -4,7 +4,7 @@ title:      message_filters::Subscriber & tf::MessageFilter理解
 subtitle:   ROS学习之路
 date:       2018-05-07
 author:     白夜行的狼
-header-img: img/contact-bg.jpg
+header-img: img/in_post/understanding_of_message_filters/contact-bg.jpg
 catalog: true
 tags:
     - message_filters
@@ -15,13 +15,13 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文永久更新地址：<https://haoqchen.github.io/2018/05/07/understanding-of-message_filters/>  
+本文持续更新地址：<https://haoqchen.github.io/2018/05/07/understanding-of-message_filters/>  
 　　因为日常看代码经常能看到tf相关的一些函数，转来转去，绕得很晕，有不懂的就仔细查一下，将自己的理解整理出来，这篇是关于 tf::MessageFilter的。
 
 # 1. 两者的关系
 　　message_filters，顾名思义是消息过滤器；tf::MessageFilter，顾名思义是tf下的消息过滤器。消息过滤器为什么要用tf呢？tf::MessageFilter可以订阅任何的ROS消息，然后将其缓存，直到这些消息可以转换到目标坐标系，然后进行相应的处理（一般在回调函数中处理）。说白了就是消息订阅+坐标转换。实际上，后者继承于前者：
-![relation](/img/in_post/post_understanding_of_message_filters/relation.png)
-![message_filters](/img/in_post/post_understanding_of_message_filters/message_filters.png)
+![relation](/img/in_post/understanding_of_message_filters/relation.png)
+![message_filters](/img/in_post/understanding_of_message_filters/message_filters.png)
 
 # 2. 使用实例
 ## a. amcl中激光雷达的回调
