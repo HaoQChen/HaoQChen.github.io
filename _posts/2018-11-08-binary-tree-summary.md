@@ -4,7 +4,7 @@ title:      二叉树面试、笔试知识点整理
 subtitle:   数据结构与算法
 date:       2018-11-08
 author:     白夜行的狼
-header-img: img/in_post/binary_tree_summary/post-bg-infinity.jpg
+header-img: img/in_post/binary_tree_summary/black.jpeg
 catalog: true
 tags:
     - 二叉树
@@ -26,6 +26,7 @@ tags:
 
 **完全二叉树：**对一棵具有同样深度的满二叉树进行层序遍历编号，如果该二叉树的层序遍历编号跟满二叉树的编号对应一致，则该二叉树是完全二叉树。相同节点，完全二叉树有最小深度。下图中，只有第一个树是完全二叉树，其余都不是。
 |![total1](/img/in_post/binary_tree_summary/total1.png)|![total2](/img/in_post/binary_tree_summary/total2.png)|
+|------|------|
 |![total3](/img/in_post/binary_tree_summary/total3.png)|![total4](/img/in_post/binary_tree_summary/total4.png)|
 ## 1.2 二叉树的四种排序
 见之前写的另一篇博客：[二叉树前序遍历、中序遍历、后序遍历、层序遍历的直观理解](https://haoqchen.github.io/2018/05/23/go-through-binary-tree/)
@@ -42,7 +43,7 @@ tags:
 [二叉查找树参考一](https://songlee24.github.io/2015/01/13/binary-search-tree/)  
 [二叉查找树参考二](http://www.cnblogs.com/huangxincheng/archive/2012/07/21/2602375.html)
 
-平衡二叉树：平衡的二叉查找树（AVL，发明者为Adel'son-Vel'skii 和 Landis），树的左子树和右子树高度之差不超过1层，超过一层需要旋转，否则失去平衡。平衡二叉树可以确保查找是严格的O(logN)（普通二叉查找树在极限环境下是O(N)）。左子树和右子树的深度之差称为平衡因子，其只能为-1、1、0
+**平衡二叉树：**平衡的二叉查找树（AVL，发明者为Adel'son-Vel'skii 和 Landis），树的左子树和右子树高度之差不超过1层，超过一层需要旋转，否则失去平衡。平衡二叉树可以确保查找是严格的O(logN)（普通二叉查找树在极限环境下是O(N)）。左子树和右子树的深度之差称为平衡因子，其只能为-1、1、0
 
 [平衡二叉树参考一](http://www.cnblogs.com/huangxincheng/archive/2012/07/22/2603956.html)  
 [平衡二叉树参考二](http://lib.csdn.net/article/datastructure/9204)  
@@ -81,9 +82,9 @@ tags:
 树的高度=树的深度，但是结点的深度！=结点的高度。对于结点而言，深度是从上到下的，根结点深度是0（也有说是1）；高度是从下到上的，叶结点的高度是0（也有说1），某个结点的高度是从该结点向下到某个叶结点的最长路径。
 
 # 参考
-《大话数据结构》
-牛客网上相关试题
-<https://blog.csdn.net/xiaoquantouer/article/details/65631708>
-<http://www.cnblogs.com/huangxincheng/archive/2012/07/21/2602375.html>
+《大话数据结构》  
+牛客网上相关试题  
+<https://blog.csdn.net/xiaoquantouer/article/details/65631708>  
+<http://www.cnblogs.com/huangxincheng/archive/2012/07/21/2602375.html>  
 <br><br>
 **版权声明：未经允许不得以任何形式转载**
