@@ -35,7 +35,7 @@ tags:
 3. 二叉树结点的先根序列、中根序列和后根序列中，所有叶子结点的先后顺序一样
 4. 建议看看文末第3个参考有趣详细的推导
 <center >
-    <img src="/img/in_post/go_through_binary_tree/pre.png" width=30%/>
+    <img src="https://img-blog.csdn.net/20151129213701642" width=30%/>
     前序遍历（DLR）
 </center>
 <center >
