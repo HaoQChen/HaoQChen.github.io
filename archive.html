@@ -56,7 +56,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				{%- endfor -%}
 
 			{% comment %} group by year {% endcomment %}
-			{%- assign _currentdate = _article.date | date: '%Y-m' -%}
+			{%- assign _currentdate = _article.date | date: '%Y-%m' -%}
 			{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
 				<section>
@@ -77,7 +77,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				        </h3>
 				        {% endif %}
 				        <h4 class="post-date">
-				            {{ _article.date | date: '%Y-m' }}
+				            {{ _article.date | date: '%Y-%m' }}
 				        </h4>
 				    </a>
 					<hr>
