@@ -37,7 +37,7 @@ tags:
 
 |前序遍历（DLR）|中序遍历（LDR）|后序遍历（LRD）|
 |:------:|:------:|:------:|
-|![pre](/img/in_post/go_through_binary_tree/pre.png)![mid](/img/in_post/go_through_binary_tree/mid.png)|![back](/img/in_post/go_through_binary_tree/back.png)|
+|![pre](/img/in_post/go_through_binary_tree/pre.png)|![mid](/img/in_post/go_through_binary_tree/mid.png)|![back](/img/in_post/go_through_binary_tree/back.png)|
 
 # 3. 算法上的前中后序实现
 除了下面的递归实现，还有一种使用栈的非递归实现。因为递归实现比较简单，且容易关联到前中后，所以
