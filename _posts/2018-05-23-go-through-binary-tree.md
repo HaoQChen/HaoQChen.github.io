@@ -34,9 +34,8 @@ tags:
 2. 整棵树的起点，就如上面所说的，从A开始，前序遍历的话，一棵树的根永远在左子树前面，左子树又永远在右子树前面，你就找他的起点好了。
 3. 二叉树结点的先根序列、中根序列和后根序列中，所有叶子结点的先后顺序一样
 4. 建议看看文末第3个参考有趣详细的推导
-<center class="third">
-    <img src="/img/in_post/go_through_binary_tree/pre.png" width="10%"/><img src="/img/in_post/go_through_binary_tree/mid.png" width="10%"/><img src="/img/in_post/go_through_binary_tree/back.png" width="10%"/>
-</center>
+![pre](/img/in_post/go_through_binary_tree/pre.png)![mid](/img/in_post/go_through_binary_tree/mid.png)![back](/img/in_post/go_through_binary_tree/back.png)
+前序遍历（DLR）               中序遍历（LDR）                     后序遍历（LRD）
 
 # 3. 算法上的前中后序实现
 除了下面的递归实现，还有一种使用栈的非递归实现。因为递归实现比较简单，且容易关联到前中后，所以
