@@ -41,9 +41,7 @@ tags:
     中序遍历（LDR）
     <img src="/img/in_post/go_through_binary_tree/back.png">
     后序遍历（LRD）
-</center>
-
-<center>
+</center><center>
     <img src="http://dreamofbook.qiniudn.com/Zero.png">
 </center>
 
