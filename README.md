@@ -10,7 +10,7 @@
 <script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script>
 ```
 
-* 返回顶部
+* 返回顶部  
 把在rocket.css、signature.css和toc.css下载到css的目录下，然后在 include目录下的head.html文件的头部添加下面代码：
 ```html
 <link rel="stylesheet" href="/css/rocket.css">
@@ -28,7 +28,7 @@
 * 显示站点访问总量
 具体教程参考:[不蒜子](http://ibruce.info/2015/04/04/busuanzi/)
 
-* 添加CSDN博客
+* 添加CSDN博客  
 在\_config.yml用户名那里添加一栏:`CSDN_username:      u013834525`  
 在`_includes/sns-links.html`中对应位置（其他网站账户附近）添加
 ```
@@ -45,24 +45,24 @@
 ```
 
 以下部分借鉴[利用 GitHub Pages 快速搭建个人博客](https://www.jianshu.com/p/e68fba58f75c)  
-* 百度统计
+* 百度统计  
 直接申请，然后在\_config.yml中填写码就行。
 
-* 删除friend
+* 删除friend  
 直接将\_config.yml中的friend注释了就好。
 
-* 修改网站图标
+* 修改网站图标  
 在博客`img`目录下找到并替换`favicon.ico`这个图标即可，图标尺寸为32x32。
 
-* 增加Gitalk评论功能
+* 增加Gitalk评论功能  
 参考[为博客添加 Gitalk 评论插件](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)  
 以及官网[Gitalk](https://github.com/gitalk/gitalk/blob/master/readme-cn.md)
 
 以下是我自己的一些更改
-* 删除portolio
+* 删除portolio  
 根据[Jekyll官网](https://www.jekyll.com.cn/docs/pages/)的说法，只要直接删除文件夹即可
 
-* 增加搜索栏
+* 增加搜索栏  
 <https://github.com/HaoQChen/jekyll-search>  
 另外我修改了搜索栏的位置，放到了右上方。只需要修改增加到`_includes/footer.html`中设置位置的px值即可。
 ```
@@ -71,8 +71,28 @@
 </div>  </div>
 ```
 
-* 删除标题前的#
+* 删除标题前的#  
 只需要删除`_layouts/post.html`中189行的icon中的#即可，应该可以修改成任意值。
+
+* 修改文章列表中的排序  
+原来只是按照年份排序的，我增加了月份。修改`archive.html`中59行为
+```
+{%- assign _currentdate = _article.date | date: '%Y-%m' -%}
+```
+并且每篇文章我也增加了日期，在副标题下添加这一句
+```
+<h4 class="post-date">
+    {{ _article.date | date: '%Y-%m-%d' }}
+</h4>
+```
+
+* 导航栏分级标题  
+根据[#116](https://github.com/Huxpro/huxpro.github.io/issues/116)来修改的。找到`css`目录下的`hux-blog.min.css`，不知道为什么我的sublime显示这个文件只有一行，很长的一行。我尝试过在一些网站恢复格式，但是保存后导致网页显示有问题。最后就只能在这个只有很长一行的文件中搜索到相应位置修改。  
+`这里需要注意的是，如果想h1、h2等都不同，需要删除逗号，要注意格式～～～`
+
+* 更改最底下的作者链接  
+貌似链接到作者的github获取star数，加载网页会比较花时间，我就直接删除了，并修改了一下下。主要修改都在`_includes/footer.html`中
+
 
 **建议**
 * 多看github中的issue，很多问题其实别人都遇到过了，有些甚至给出了解决方法。
