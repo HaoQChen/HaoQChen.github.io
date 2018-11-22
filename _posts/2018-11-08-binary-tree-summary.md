@@ -25,6 +25,7 @@ tags:
 ![full_tree](/img/in_post/binary_tree_summary/full_tree.png)
 
 **完全二叉树：**对一棵具有同样深度的满二叉树进行层序遍历编号，如果该二叉树的层序遍历编号跟满二叉树的编号对应一致，则该二叉树是完全二叉树。相同节点，完全二叉树有最小深度。下图中，只有第一个树是完全二叉树，其余都不是。
+
 |![total1](/img/in_post/binary_tree_summary/total1.png)|![total2](/img/in_post/binary_tree_summary/total2.png)|
 |------|------|
 |![total3](/img/in_post/binary_tree_summary/total3.png)|![total4](/img/in_post/binary_tree_summary/total4.png)|
