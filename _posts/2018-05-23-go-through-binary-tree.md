@@ -40,6 +40,10 @@ tags:
     <img src="/img/in_post/go_through_binary_tree/back.png" title="后序遍历（LRD）" width=30%/>
 </figure>
 
+<center>
+    <img src="http://dreamofbook.qiniudn.com/Zero.png">
+</center>
+
 # 3. 算法上的前中后序实现
 除了下面的递归实现，还有一种使用栈的非递归实现。因为递归实现比较简单，且容易关联到前中后，所以
 ```cpp
