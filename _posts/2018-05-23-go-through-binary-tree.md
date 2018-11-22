@@ -4,7 +4,7 @@ title:      二叉树前序遍历、中序遍历、后序遍历、层序遍历�
 subtitle:   数据结构与算法
 date:       2018-05-23
 author:     白夜行的狼
-header-img: img/in_post/go_through_binary_tree/post-bg-infinity.jpg
+header-img: img/in_post/go_through_binary_tree/black.jpeg
 catalog: true
 tags:
     - 前序遍历
