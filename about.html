@@ -18,7 +18,7 @@ multilingual: true
     {{ about_zh | markdownify }}
 </div> -->
 <div class="zh post-container">
-    {% include about/zh.md %}
+    {{% include about/zh.md %} | markdownify }
 </div>
 
 <!-- English Version -->
