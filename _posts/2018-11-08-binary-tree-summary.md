@@ -29,6 +29,7 @@ tags:
 |![total1](/img/in_post/binary_tree_summary/total1.png)|![total2](/img/in_post/binary_tree_summary/total2.png)|
 |------|------|
 |![total3](/img/in_post/binary_tree_summary/total3.png)|![total4](/img/in_post/binary_tree_summary/total4.png)|
+
 ## 1.2 二叉树的四种排序
 见之前写的另一篇博客：[二叉树前序遍历、中序遍历、后序遍历、层序遍历的直观理解](https://haoqchen.github.io/2018/05/23/go-through-binary-tree/)
 ## 1.3 二叉树的计算性质
