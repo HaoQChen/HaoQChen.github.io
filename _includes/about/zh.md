@@ -18,12 +18,11 @@
 
 如果顺利毕业，2019年6月份将奔赴深圳一家与无人车传感器相关的公司，为自己的梦想打拼。
 
-2018年11月22日完成搬迁至github.io，之前活跃在[CSDN博客](https://blog.csdn.net/u013834525)中。必须要吐槽一下的是：
-* CSDN竟然在Ubuntu系统下显示有问题，滚动时排版有问题，代码高亮有问题
+2018年11月23日完成搬迁至github.io，之前活跃在[CSDN博客](https://blog.csdn.net/u013834525)中。必须要吐槽一下的是：
+* CSDN竟然在Ubuntu系统下显示有问题，滚动时排版有问题，代码高亮有问题（该bug反映后于23日下午修复）
 * 竟然偷偷改变了tab的空格数，导致有部分代码要改
 * 垃圾编辑器，连Ctrl+z用起来都是乱七八糟的  
 
-为了程序员的最高自由，最后被迫来了github.io。一些开源的工程放在了[Github](https://github.com/HaoQChen)
-
+为了程序员的最高自由，最后被迫来了github.io，如果你喜欢我的博客风格，也欢迎拿去[github地址](https://github.com/HaoQChen/HaoQChen.github.io)（记得star哦）。
 
 
