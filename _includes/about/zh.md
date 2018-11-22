@@ -21,7 +21,8 @@
 2018年11月22日完成搬迁至github.io，之前活跃在[CSDN博客](https://blog.csdn.net/u013834525)中。必须要吐槽一下的是：
 * CSDN竟然在Ubuntu系统下显示有问题，滚动时排版有问题，代码高亮有问题
 * 竟然偷偷改变了tab的空格数，导致有部分代码要改
-* 垃圾编辑器，连Ctrl+z用起来都是乱七八糟的
+* 垃圾编辑器，连Ctrl+z用起来都是乱七八糟的  
+
 为了程序员的最高自由，最后被迫来了github.io。一些开源的工程放在了[Github](https://github.com/HaoQChen)
 
 

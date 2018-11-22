@@ -7,10 +7,9 @@ multilingual: true
 ---
 
 <!-- Language Selector -->
-<!-- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 Chinese </option>
-    <option value="1"> 英文 English </option>
-</select> -->
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected></option>
+</select>
 
 <!-- Chinese Version -->
 <div class="zh post-container">
@@ -19,10 +18,10 @@ multilingual: true
 </div>
 
 <!-- English Version -->
-<!-- <div class="en post-container">
+<div class="en post-container">
     {% capture about_en %}{% include about/en.md %}{% endcapture %}
     {{ about_en | markdownify }}
-</div> -->
+</div>
 
 
 <!-- Gitalk 评论 start  -->
