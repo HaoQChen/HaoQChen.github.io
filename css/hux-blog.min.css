@@ -81,16 +81,16 @@
     text - decoration: none;
     white - space: nowrap;
     text - overflow: ellipsis
-}.side - catalog.catalog - body.h1_nav,{
+}.side - catalog.catalog - body.h1_nav{
     margin - left: 0;
     font - size: 15px;
     font - weight: 700
-}.side - catalog.catalog - body.h2_nav,{
-    margin - left: 3px;
+}.side - catalog.catalog - body.h2_nav{
+    margin - left: 3;
     font - size: 13px;
     font - weight: 700
 }.side - catalog.catalog - body.h3_nav {
-    margin - left: 6px;
+    margin - left: 6;
     font - size: 11px;
     font - weight: 700
 }.side - catalog.catalog - body.h4_nav,
