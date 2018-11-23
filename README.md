@@ -96,6 +96,9 @@
 * 修改About中只留下中文自我介绍  
 主要修改about.html。删除了`<!-- Language Selector -->`、`<!-- English Version -->`。最主要要将`multilingual: false`
 
+* 在谷歌搜索引擎中登记自己的网站
+
+
 
 **建议**
 * 多看github中的issue，很多问题其实别人都遇到过了，有些甚至给出了解决方法。
