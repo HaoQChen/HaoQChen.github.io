@@ -4,22 +4,22 @@
 
 以下部分借鉴[GJXS1980](https://github.com/GJXS1980/gjxs.github.io)  
 * 动态鼠标曲线  
-添加模块`canvas-nest.min.js`到js目录下 修改`layouts/post.html`文件在开始添加下面代码
-```js
+添加模块`canvas-nest.min.js`到js目录下 修改`layouts/post.html`文件在开始添加下面代码  
+``` js
  <!-- canvas-nest.min.js -->
 <script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script>
 ```
 
 * 返回顶部  
-把在rocket.css、signature.css和toc.css下载到css的目录下，然后在 include目录下的head.html文件的头部添加下面代码：
-```html
+把在rocket.css、signature.css和toc.css下载到css的目录下，然后在 include目录下的head.html文件的头部添加下面代码：  
+``` html
 <link rel="stylesheet" href="/css/rocket.css">
 <link rel="stylesheet" href="/css/signature.css">
 <link rel="stylesheet" href="/css/toc.css">
 ```
 
 把在totop.js和toc.js下载到js的目录下，然后在include目录下的footer.html的最后添加下面代码：  
-```html
+```
 <a id="rocket" href="#top" class=""></a>
 <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
 <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
@@ -62,13 +62,13 @@
 * 删除portolio  
 根据[Jekyll官网](https://www.jekyll.com.cn/docs/pages/)的说法，只要直接删除文件夹即可
 
-* 增加搜索栏  
+* 增加搜索栏
 <https://github.com/HaoQChen/jekyll-search>  
 另外我修改了搜索栏的位置，放到了右上方。只需要修改增加到`_includes/footer.html`中设置位置的px值即可。
 ```
 <div style="position: fixed; right: 16px; top: 62px;">
-    <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>       <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>
-</div>  </div>
+    <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>
+</div>
 ```
 
 * 删除标题前的#  
@@ -79,8 +79,8 @@
 ```
 {%- assign _currentdate = _article.date | date: '%Y-%m' -%}
 ```
-并且每篇文章我也增加了日期，在副标题下添加这一句
-```
+并且每篇文章我也增加了日期，在副标题下添加这一句  
+``` html
 <h4 class="post-date">
     {{ _article.date | date: '%Y-%m-%d' }}
 </h4>
