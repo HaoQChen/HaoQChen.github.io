@@ -67,4 +67,5 @@ tags:
 [MathType中国官网](http://www.mathtype.cn/)  
 [https://jingyan.baidu.com/article/86fae346fe402b3c48121a5a.html](https://jingyan.baidu.com/article/86fae346fe402b3c48121a5a.html)
 
-**版权声明：未经允许不得以任何形式转载**
+<br><br>
+**版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

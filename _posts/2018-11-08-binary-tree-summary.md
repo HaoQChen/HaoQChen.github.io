@@ -64,7 +64,7 @@ tags:
 **答案：**123459768（这一题是作者自己虐自己的。。不一定对，能发现这一题有问题，那你已经强了）
 ![search_an](/img/in_post/binary_tree_summary/search_an.png)
 ## 2.2 节点数相关计算
-相关知识点是[1.3][ 1.3 二叉树的计算性质]
+相关知识点是[1.3][ 1.3 二叉树的计算性质]@TODO
 ### 2.2.1 某棵完全二叉树上有555个节点，则该二叉树的叶子节点数为
 **答案：**278
 
@@ -89,4 +89,4 @@ tags:
 <https://blog.csdn.net/xiaoquantouer/article/details/65631708>  
 <http://www.cnblogs.com/huangxincheng/archive/2012/07/21/2602375.html>  
 <br><br>
-**版权声明：未经允许不得以任何形式转载**
+**版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

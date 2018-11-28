@@ -110,4 +110,5 @@ int main(int argc, char** argv){
 <http://blog.sina.com.cn/s/blog_8a2281f70102xi2v.html>  
 
   
-**版权声明：未经允许不得以任何形式转载**
+<br><br>
+**版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

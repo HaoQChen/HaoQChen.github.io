@@ -15,7 +15,8 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/05/25/ROS-show-trajectory/>
+本文持续更新地址：<https://haoqchen.site/2018/05/25/ROS-show-trajectory/>
 
 # 参考
-**版权声明：未经允许不得以任何形式转载**
+<br><br>
+**版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

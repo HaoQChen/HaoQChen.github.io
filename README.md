@@ -103,6 +103,10 @@
 * Google网站站长[Google Search Console](https://search.google.com/search-console?hl=zh-CN)。在这里添加资源，并按要求验证即可。我是选择了第一个，下载html文件，然后放在主目录下（跟archive同一目录）。我不会用什么sitemap，就很蠢地一篇篇博客提交给Google去抓取，地址在`旧版Search Console->抓取>Google抓取工具`。添加每一篇的地址，然后点`抓取`，然后点`请求编入索引`（最好抓取一篇请求一篇，而且一次不要提交太多，隔天吧，我的请求到后面出现错误，不知道为什么）。这样你的博客就能出现在`site:https://haoqchen.github.io/`中了，也可以直接在Google中搜索到了。  
 * [百度链接提交](https://ziyuan.baidu.com/linksubmit/url)。百度也有要验证网站的～～～我忘了当时是怎么进去的了。（github禁止了百度的爬虫，所以怎么设置，百度都不可能搜索到博客的。需要另外搞。）
 
+* 安装本地调试
+gem版本太低，更新步骤太复杂，放弃了。
+
+
 
 **建议**
 * 多看github中的issue，很多问题其实别人都遇到过了，有些甚至给出了解决方法。
