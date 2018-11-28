@@ -22,4 +22,4 @@ https://haoqchen.site/2018/11/08/card-judge/
 https://haoqchen.site/2018/11/08/heteromery/
 https://haoqchen.site/2018/11/08/triangle-numbers/
 https://haoqchen.site/2018/11/27/move-base-code/
-https://haoqchen.site/2018/11/27/map-server/
+https://haoqchen.site/2018/11/27/map_server/

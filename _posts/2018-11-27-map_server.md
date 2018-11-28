@@ -13,7 +13,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.site/2018/11/27/map-server/>
+本文持续更新地址：<https://haoqchen.site/2018/11/27/map_server/>
 
 本文将介绍自己在看ROS的Navigation stack中的map\_server包源代码时的一些理解。作者的ROS版本是indigo,map\_server版本是1.12.13。如有错误，欢迎在评论中指正。
 
@@ -37,7 +37,7 @@ tags:
 **调用形式：**  
 `map_server <map.yaml>`，其中`map.yaml`是map\_saver中生成的地图描述文件，包括了resolution、图片名、原点信息、阈值等。  
 除此之外也可以像下面这样调用，但不建议：  
-`map_server <map> <resolution>`。map是图片名字，这样子直接跳过了描述文件，不建议。
+`map_server <map> <resolution>`。map是图片名字，这样子直接跳过了描述文件，不建议。  
 
 * 在main函数中定义了一个`MapServer`对象。在该对象的构造函数中，通过描述文件和ROS参数服务器获得地图相应参数后，调用[image\_loader动态库][image\_loader动态库]中的`loadMapFromFile`函数将地图加载到私有成员`nav_msgs::GetMap::Response map_resp_`中。  
 
