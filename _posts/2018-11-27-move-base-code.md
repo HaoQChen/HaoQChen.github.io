@@ -380,6 +380,6 @@ recovery是指恢复的规划器，其跟全局规划器和局部规划器是同
 1. [ROS actionlib](http://wiki.ros.org/actionlib)
 2. [actionlib::SimpleActionServer\<ActionSpec\> Class Template Reference](https://docs.ros.org/diamondback/api/actionlib/html/classactionlib_1_1SimpleActionServer.html#a4964ef9e28f5620e87909c41f0458ecb)  
 3. [Writing a Simple Action Server using the Execute Callback](http://wiki.ros.org/actionlib_tutorials/Tutorials/SimpleActionServer%28ExecuteCallbackMethod%29)  
-4. 文中已附带的链接
+4. 文中已附带的链接  
 <br><br>
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**
