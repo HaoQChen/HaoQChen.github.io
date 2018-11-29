@@ -68,7 +68,7 @@ std::vector<geometry_msgs::PoseStamped>* controller_plan_;
 //boost的一种结合了互斥锁的用法，可以使一个线程进入睡眠状态，然后在另一个线程触发唤醒。
 boost::condition_variable planner_cond_;
 ```
-## 2.1 MoveBase::MoveBase(tf::TransformListener& tf)
+## 2.1 MoveBase(tf::TransformListener& tf)
 `move_base_node`中就只调用了这个构造函数。 
 1. 首先初始化一些成员，然后定义一个名为`move_base`的SimpleActionServer。该服务器的Callback为`MoveBase::executeCb`，可参见[Simple Action Server的教程](http://wiki.ros.org/actionlib_tutorials/Tutorials/SimpleActionServer%28ExecuteCallbackMethod%29)。
 2. 从参数服务器获取一些参数，包括两个规划器名称、代价地图坐标系、规划频率、控制周期等
@@ -82,13 +82,13 @@ boost::condition_variable planner_cond_;
 10. 先`loadRecoveryBehaviors`，不行再`loadDefaultRecoveryBehaviors`加载用户自定义的恢复规划器，这里包括了该死的找不到路自转360°
 11. 启动actionlib服务器，并启动动态参数服务器(回调函数为`reconfigureCB`，详细介绍看[高博的博客](http://www.guyuehome.com/1173))
 
-## 2.2 MoveBase::goalCB
+## 2.2 goalCB
 作用如2.1.4所示，其实是为rviz等提供一个简单的调用，该回调函数将`geometry_msgs::PoseStamped`形式的goal转换成`move_base_msgs::MoveBaseActionGoal`，再发布到对应类型的`goal`话题中
 
 ## 2.3 bool MoveBase::planService
 如2.1.9所示，这是movebase提供的一个服务。搜了一下发现，除了movebase，navfn以及global\_planner这两个包也会发布这个服务，但是没有节点订阅～～～～。这三个包的cb其实都是调用相应的全局规划器来获得一条path返回给客户端。
 
-## 2.4 void MoveBase::executeCb(const move_base_msgs::MoveBaseGoalConstPtr& move_base_goal)
+## 2.4 void executeCb(const move_base_msgs::MoveBaseGoalConstPtr& move_base_goal)
 如2.1.1所示，这个是`movebase`这个actionlib服务的回调函数。我们什么时候会用到这个回调呢？当Action Server在`move_base_msgs::MoveBaseActionGoal`类型的`goal`话题上收到一个消息，然后将其放到Sample Action Server的待定槽时。如2.1.4中被更换类型后重新发布的goal，再如在做行人跟踪时，创建一个`move_base`服务器的客户端时，通过sendgoal函数来在该话题上发布目标位姿，这时Action Server就会收到一个goal，然后就将其放到待定槽，如2.4.1中介绍的。
 
 第一次接收到goal时会进入该函数，但如果没有完成任务，尚未退出时，再有接收到goal并不会再新建线程进入一次（应该也可以这样操作，这里并没有这样选择），而是通过抢断信号的形式通知该函数，所以在处理goal的时候需要经常查看`isPreemptRequested`函数的返回，看是否有抢占。
@@ -177,7 +177,7 @@ boost::condition_variable planner_cond_;
 ```
 
 
-## 2.5 void MoveBase::planThread()
+## 2.5 void planThread()
 如2.1.3所示，这是planner线程的入口。这个函数需要等待actionlib服务器的cb`MoveBase::executeCb`来唤醒启动。主要作用是调用全局路径规划获取路径，同时保证规划的周期性以及规划超时清除goal。
 
 下面是本函数的一些主要代码，详细代码请自行下载查看。
@@ -240,7 +240,7 @@ boost::condition_variable planner_cond_;
   }
 ```
 
-## 2.6 bool MoveBase::executeCycle
+## 2.6 bool executeCycle
 该函数的两个参数分别是目标点位姿以及规划出的全局路径。  
 实现的是通过上述两个已知，利用局部路径规划器直接输出轮子速度，控制机器人按照路径走到目标点，成功返回真，否则返回假。在actionlib server的回调`MoveBase::executeCb`中被调用。
 
