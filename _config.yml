@@ -80,7 +80,7 @@ netease_comment: false
 
 # Analytics settings
 # Baidu Analytics 
-ba_track_id: 5bc886d42e948b4389c69e38714d91c3
+ba_track_id: d1e46065703c85a1029bebd67fd0d182
 
 # Google Analytics
 ga_track_id: 'UA-129699266-1'            # Format: UA-xxxxxx-xx
