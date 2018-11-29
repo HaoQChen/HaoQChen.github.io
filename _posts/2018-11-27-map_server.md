@@ -15,35 +15,36 @@ tags:
 # 0. 写在最前面
 本文持续更新地址：<https://haoqchen.site/2018/11/27/map_server/>
 
-本文将介绍自己在看ROS的Navigation stack中的map\_server包源代码时的一些理解。作者的ROS版本是indigo,map\_server版本是1.12.13。如有错误，欢迎在评论中指正。
+本文将介绍自己在看ROS的Navigation stack中的map\_server包源代码时的一些理解。作者的ROS版本是indigo，map\_server版本是1.12.13。如有错误，欢迎在评论中指正。
 
 如果觉得写得还不错，就请收藏一下啦～～～后续想把整个Navigation看了。
 
 # 1. package.xml与CMakeLists.txt
-**package**介绍中说，`mapserver提供了一个ROS节点，该节点通过一个ROS Service来提供地图数据，同时提供了一个命令行程序来动态地将生成的地图保存到文件中。`。其依赖一些库，特别需要注意的是`sdl-image（用来加载地图图片）`、`yaml-cpp（配置中用到挺多yaml文件的）`和`tf`。
+**package**介绍中说，`mapserver提供了一个ROS节点，该节点通过一个ROS Service来提供地图数据，同时提供了一个命令行程序来动态地将生成的地图保存到文件中`。其依赖一些库，特别需要注意的是`sdl-image（用来加载地图图片）`、`yaml-cpp（配置中用到挺多yaml文件的）`和`tf`。
 
 **CMakeLists**中定义生成以下：  
-* image\_loader动态库，详见[第2章][image\_loader动态库]
-* map\_server可执行程序，详见[第3章][map\_server可执行程序]。
-* map\_saver可执行程序，详见[第4章][map\_saver可执行程序]。
+* image\_loader动态库，详见[第2章](#2)
+* map\_server可执行程序，详见[第3章](#3)
+* map\_saver可执行程序，详见[第4章](#4)
 * 其余是test和安装的步骤，不是重点就不看了
 
-# 2. image\_loader动态库
+# <a id="2">2. image_loader动态库<a/>
 其实就是封装了一下`SDL_image`的功能写了一个`loadMapFromFile`函数。函数参数中会传进来地图的分辨率\[meters/pixel\]、`occ_th`（超过该值的像素为占据，归一化值）、`free_th`（低于为自由，归一化值）、`origin`（图像左下角的2D坐标，x、y、yaw，yaw是逆时针）。处理后最终将图片封装成`nav_msgs::GetMap::Response*`结构。  
 
 该结构有三种表示方法。分别是Trinary，即占据（像素用100表示），free（像素用0表示）、不明（像素用-1表示）；Scale，占据与free与三值一样，但是不明变成了(0,100)；Raw，所有像素用[0, 255]表示。
 
-# 3. map\_server可执行程序
+# <a id="3">3. map\_server可执行程序<a/>
 **调用形式：**  
 `map_server <map.yaml>`，其中`map.yaml`是map\_saver中生成的地图描述文件，包括了resolution、图片名、原点信息、阈值等。  
 除此之外也可以像下面这样调用，但不建议：  
 `map_server <map> <resolution>`。map是图片名字，这样子直接跳过了描述文件，不建议。  
 
-* 在main函数中定义了一个`MapServer`对象。在该对象的构造函数中，通过描述文件和ROS参数服务器获得地图相应参数后，调用[image\_loader动态库][image\_loader动态库]中的`loadMapFromFile`函数将地图加载到私有成员`nav_msgs::GetMap::Response map_resp_`中。  
+主要流程：  
+1. 在main函数中定义了一个`MapServer`对象。在该对象的构造函数中，通过描述文件和ROS参数服务器获得地图相应参数后，调用[image\_loader动态库][image\_loader动态库]中的`loadMapFromFile`函数将地图加载到私有成员`nav_msgs::GetMap::Response map_resp_`中。  
 
-* 然后提供一个名为`static_map`的服务，回调函数是`MapServer::mapCallback`。关于ROS服务器和客户端是什么，不懂的可以看ROS教程[编写简单的服务器和客户端 (C++)](http://wiki.ros.org/cn/ROS/Tutorials/WritingServiceClient%28c%2B%2B%29)。该服务器做的就是将地图`map_resp_`深拷贝给客户端。amcl中就是通过这个服务获得地图的
+2. 然后提供一个名为`static_map`的服务，回调函数是`MapServer::mapCallback`。关于ROS服务器和客户端是什么，不懂的可以看ROS教程[编写简单的服务器和客户端 (C++)](http://wiki.ros.org/cn/ROS/Tutorials/WritingServiceClient%28c%2B%2B%29)。该服务器做的就是将地图`map_resp_`深拷贝给客户端。amcl中就是通过这个服务获得地图的
 
-* 接着发布一个内容为`nav_msgs::MapMetaData`，名为`map_metadata`的话题。  
+3. 接着发布一个内容为`nav_msgs::MapMetaData`，名为`map_metadata`的话题。  
 ```cpp
 time map_load_time
 float32 resolution
@@ -53,7 +54,7 @@ geometry_msgs/Pose origin
 ```
 `nav_msgs::MapMetaData`的信息如上，应该只是一些地图的基本信息，查找了一下，基本没人订阅这个话题，除了一个test。
 
-* 最后发布一个内容为`nav_msgs::OccupancyGrid`，名为`map`的话题，并将加载到的`map_resp_.map`发布上去。  
+4. 最后发布一个内容为`nav_msgs::OccupancyGrid`，名为`map`的话题，并将加载到的`map_resp_.map`发布上去。  
 ```cpp
 std_msgs/Header header
 nav_msgs/MapMetaData info
@@ -61,7 +62,7 @@ int8[] data
 ```
 `nav_msgs::OccupancyGrid`的信息如上。就是地图了。查了一下发现，GMapping中也会往`map`这个话题发布消息。除了一些test节点，目前只发现amcl中有在一定条件下订阅`map`这个话题。然而据我了解，amcl中实际也没有订阅话题，而是直接通过上述的服务器来获得地图的。
 
-# 4. map\_saver可执行程序
+# <a id="4">4. map\_saver可执行程序<a/>
 **调用形式：**  
 `map_saver [-f <mapname>] [ROS remapping args]"`，比如想将GMapping中生成的地图保存下来，可以：  
 `rosrun map_server map_saver -f ~/robot_ws/map/gmapping`
@@ -70,5 +71,5 @@ main函数中定义了一个`MapGenerator`类对象，该类初始化之后订�
 
 # 参考
 * [map_server官网](http://wiki.ros.org/map_server)  
-<br><br>
+<br><br>  
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      move_base完全详解
+title:      ROS Navigation之move_base完全详解
 subtitle:   ROS学习之路之Navigation包解读
 date:       2018-11-27
 author:     白夜行的狼
