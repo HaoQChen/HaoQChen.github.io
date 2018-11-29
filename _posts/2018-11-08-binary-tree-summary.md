@@ -14,7 +14,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/11/08/binary-tree-summary/>
+本文持续更新地址：<https://haoqchen.site/2018/11/08/binary-tree-summary/>
 
 本文记录了作者在准备秋招笔试面试过程中遇到的跟二叉树有关的题目，同时会总结一下复习到的关键知识点。可能不会太详细。本人学习过程中受到《大话数据结构》这本书的很多启发，推荐大家去买来看。
 
@@ -31,7 +31,7 @@ tags:
 |![total3](/img/in_post/binary_tree_summary/total3.png)|![total4](/img/in_post/binary_tree_summary/total4.png)|
 
 ## 1.2 二叉树的四种排序
-见之前写的另一篇博客：[二叉树前序遍历、中序遍历、后序遍历、层序遍历的直观理解](https://haoqchen.github.io/2018/05/23/go-through-binary-tree/)
+见之前写的另一篇博客：[二叉树前序遍历、中序遍历、后序遍历、层序遍历的直观理解](https://haoqchen.site/2018/05/23/go-through-binary-tree/)
 ## 1.3 二叉树的计算性质
 1. 二叉树的第i层上最多有2i-1个节点
 2. 深度为k的二叉树最多有2k-1个节点
@@ -52,7 +52,7 @@ tags:
 [平衡二叉树参考三](https://www.cnblogs.com/suimeng/p/4560056.html)  
 # 2. 笔试真题
 ## 2.1 二叉树遍历类
-[相关知识点](https://haoqchen.github.io/2018/05/23/go-through-binary-tree/)
+[相关知识点](https://haoqchen.site/2018/05/23/go-through-binary-tree/)
 
 **注意：**已知前序和后序遍历不能唯一确定一棵二叉树，已知前中可以唯一确定，已知后中也可以。
 

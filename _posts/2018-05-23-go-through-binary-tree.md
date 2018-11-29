@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/05/23/go-through-binary-tree/>
+本文持续更新地址：<https://haoqchen.site/2018/05/23/go-through-binary-tree/>
 
 复习到二叉树，看到网上诸多博客文章各种绕，记得头晕。个人觉得数学、算法这些东西都是可以更直观简洁地表示，然后被记住的，并不需要靠死记硬背。
 

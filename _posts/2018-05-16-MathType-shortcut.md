@@ -13,7 +13,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/05/16/MathType-shortcut/>  
+本文持续更新地址：<https://haoqchen.site/2018/05/16/MathType-shortcut/>  
 作者用的是版本是MathType6.9a。这里总结一些常用的  
 详细的快捷键请查看菜单栏的Preferences->Customize Keyboard。中文应该是选项->自定义键盘？  
 或者鼠标停留在某个符号上，底部状态栏也会显示相应的快捷键。  

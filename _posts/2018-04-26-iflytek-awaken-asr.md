@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/04/26/iflytek-awaken-asr/>
+本文持续更新地址：<https://haoqchen.site/2018/04/26/iflytek-awaken-asr/>
 
 * github地址：<https://github.com/HaoQChen/iflytek_awaken_asr>（喜欢的话帮忙github点个赞呗～～～包含命令行和ROS两个分支，自行选择）
 * 因为科大讯飞给的Demo中只有“录一段时间的音频然后命令词识别”、“对一段录音中是否有唤醒词进行判断”，不能够实现24小时不间断的进行命令词识别或者唤醒的Demo。所以我设计了程序实现24小时不间断录音，实时检测有无唤醒词出现，当有唤醒词出现时，切换到“一段时间的命令词识别”功能。（科大讯飞的文档中说，唤醒功能的QIVWSessionBegin可以修改一个参数实现唤醒+命令词识别，但是我试了很多次，不懂这里的bnf应该是什么格式的）

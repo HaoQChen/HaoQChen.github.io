@@ -13,7 +13,7 @@ tags:
     - link_directories
     - 相对路径
 --- 
-本文持续更新地址：<https://haoqchen.github.io/2018/04/26/CMakeLists-setting-relative-path/>
+本文持续更新地址：<https://haoqchen.site/2018/04/26/CMakeLists-setting-relative-path/>
 
 先看我的CMakeLists文件：
 ```cmake

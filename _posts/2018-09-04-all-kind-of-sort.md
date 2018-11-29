@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/10/10/all-kind-of-sort/>
+本文持续更新地址：<https://haoqchen.site/2018/10/10/all-kind-of-sort/>
 
 如果觉得还不错就关注一个呗，博主会长期更新自己的学习和收获。
 

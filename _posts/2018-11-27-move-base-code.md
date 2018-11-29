@@ -30,7 +30,7 @@ move\_base维护了两种`costmaps`，分别给全局、局部规划器用。具
 
 **CMakeLists**中定义生成以下：  
 * 动态参数服务器，可以在线修改一些参数。怎么用的话看[高博的博客](http://www.guyuehome.com/1173)
-* `move_base`动态链接库，其实就定义了一个`MoveBase`类，详细看[第2章](#2-MoveBase类)
+* `move_base`动态链接库，其实就定义了一个`MoveBase`类，详细看[第2章](#-2-MoveBase类)
 * `move_base_node`节点，其实就定义了一个`MoveBase`对象。
 * 安装选项。
 

@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/04/28/ROS-node-init/>
+本文持续更新地址：<https://haoqchen.site/2018/04/28/ROS-node-init/>
 
 作者会长期更新自己的所学，觉得写得还不错就收藏一波呀～～一起学习进步
 

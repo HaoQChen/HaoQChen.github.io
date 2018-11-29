@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/09/28/new-delete-dangerous/>
+本文持续更新地址：<https://haoqchen.site/2018/09/28/new-delete-dangerous/>
 
 这里假设大家都知道怎么用new和delete来进行堆空间的申请和释放。这种错误比较难发现，希望大家引以为鉴。
 

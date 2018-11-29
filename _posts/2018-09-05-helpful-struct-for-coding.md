@@ -15,7 +15,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/09/05/helpful-struct-for-coding/>
+本文持续更新地址：<https://haoqchen.site/2018/09/05/helpful-struct-for-coding/>
 
 本文总结了STL的编程常用数据结构，包括vector、list、stack、deque、字符串等。主要是为了方便日常编程使用，不用记得那么辛苦，也不用整天翻文档。
 
@@ -175,7 +175,7 @@ score.erase(i_map, i_map+5)
 ```
 ## 6.2 二维map
 # 7. 字符串处理
-详情请参考我的另一篇博客：[C++字符串处理总结（char、string）](https://haoqchen.github.io/2018/09/09/string-and-char/)
+详情请参考我的另一篇博客：[C++字符串处理总结（char、string）](https://haoqchen.site/2018/09/09/string-and-char/)
 
 # 参考
 [STL中map用法详解](https://blog.csdn.net/bat603/article/details/1456141)

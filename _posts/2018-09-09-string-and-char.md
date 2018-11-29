@@ -14,9 +14,9 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/09/09/string-and-char/>
+本文持续更新地址：<https://haoqchen.site/2018/09/09/string-and-char/>
 
-也欢迎收藏我的另一篇总结：[编程常用数据结构与函数总结（vector、list、stack、deque、字符串）](https://haoqchen.github.io/2018/09/05/helpful-struct-for-coding/)
+也欢迎收藏我的另一篇总结：[编程常用数据结构与函数总结（vector、list、stack、deque、字符串）](https://haoqchen.site/2018/09/05/helpful-struct-for-coding/)
 
 C++字符串处理有最原始的char以及string两种方式，这里对两种方式常用的功能进行总结及对比。
 

@@ -13,7 +13,7 @@ tags:
 --- 
 
 # 0. 写在最前面
-本文持续更新地址：<https://haoqchen.github.io/2018/11/08/arithmetic-progression-recovery/>
+本文持续更新地址：<https://haoqchen.site/2018/11/08/arithmetic-progression-recovery/>
 # 1. 题目描述
 小P写下了一个等差数列，然后小Q将等差数列中的所有偶数都除以2（一直除以2，直到变成奇数为止）。然后小P发现等差数列被改了，现在他要还原出原来的等差数列。如果有多种可能的答案，请输出首项最小的等差数列。
 # 2. 输入
