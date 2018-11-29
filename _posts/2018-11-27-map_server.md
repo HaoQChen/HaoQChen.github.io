@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      map_server完全详解
+title:      ROS Navigation之map_server完全详解
 subtitle:   ROS学习之路之Navigation包解读
 date:       2018-11-27
 author:     白夜行的狼
@@ -70,6 +70,8 @@ int8[] data
 main函数中定义了一个`MapGenerator`类对象，该类初始化之后订阅`map`话题。在订阅的回调函数中，将订阅得到的map按照一定格式保存到当地的.pgm文件，同时将地图信息保存到对应的.yaml文件中。
 
 # 参考
-* [map_server官网](http://wiki.ros.org/map_server)  
+* [map_server官网](http://wiki.ros.org/map_server)
+
+
 <br><br>  
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

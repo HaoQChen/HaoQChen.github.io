@@ -30,11 +30,11 @@ move\_base维护了两种`costmaps`，分别给全局、局部规划器用。具
 
 **CMakeLists**中定义生成以下：  
 * 动态参数服务器，可以在线修改一些参数。怎么用的话看[高博的博客](http://www.guyuehome.com/1173)
-* `move_base`动态链接库，其实就定义了一个`MoveBase`类，详细看[第2章](#-2-MoveBase类)
+* `move_base`动态链接库，其实就定义了一个`MoveBase`类，详细看[第2章](#2)
 * `move_base_node`节点，其实就定义了一个`MoveBase`对象。
 * 安装选项。
 
-# 2. MoveBase类
+# <a id="2">2. MoveBase类<a/>
 该类利用`actionlib::SimpleActionServer<move_base_msgs::MoveBaseAction>`给出的接口来实现：给定一个目标，然后控制移动机器人走到目标点的功能。  
 
 关于[actionlib](http://wiki.ros.org/actionlib)我也不是很懂，就不坑大家了，大概就是ROS提供的一个基础框架，通过客户端向服务器发送一个goal，服务器做出相应处理。相对于基础的ROS service，该框架提供了取消请求、获取周期性反馈、抢占任务等功能，适合长时间的服务。MoveBase实现的就是服务器功能，我们就可以在其他地方声明客户端来申请相应的服务。
