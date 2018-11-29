@@ -72,6 +72,5 @@ main函数中定义了一个`MapGenerator`类对象，该类初始化之后订�
 # 参考
 * [map_server官网](http://wiki.ros.org/map_server)
 
-
 <br><br>  
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**
