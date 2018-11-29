@@ -98,5 +98,7 @@ int main(int argc, char** argv)
 这里其实还可以做一些结构和顺序的优化的，时间比较赶就没有做了。
 
   
-<br><br>
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

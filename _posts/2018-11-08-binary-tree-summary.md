@@ -32,7 +32,7 @@ tags:
 
 ## 1.2 二叉树的四种排序
 见之前写的另一篇博客：[二叉树前序遍历、中序遍历、后序遍历、层序遍历的直观理解](https://haoqchen.site/2018/05/23/go-through-binary-tree/)
-## 1.3 二叉树的计算性质
+## <a id="1.3">1.3 二叉树的计算性质<a/>
 1. 二叉树的第i层上最多有2i-1个节点
 2. 深度为k的二叉树最多有2k-1个节点
 3. 对任何一棵树，如果其终端节点数为n0，度为2的节点数为n2，则n0=n2+1。
@@ -64,7 +64,7 @@ tags:
 **答案：**123459768（这一题是作者自己虐自己的。。不一定对，能发现这一题有问题，那你已经强了）
 ![search_an](/img/in_post/binary_tree_summary/search_an.png)
 ## 2.2 节点数相关计算
-相关知识点是[1.3][ 1.3 二叉树的计算性质]@TODO
+相关知识点是[1.3](#1.3)
 ### 2.2.1 某棵完全二叉树上有555个节点，则该二叉树的叶子节点数为
 **答案：**278
 
@@ -88,5 +88,8 @@ tags:
 牛客网上相关试题  
 <https://blog.csdn.net/xiaoquantouer/article/details/65631708>  
 <http://www.cnblogs.com/huangxincheng/archive/2012/07/21/2602375.html>  
-<br><br>
+
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

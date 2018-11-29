@@ -48,5 +48,7 @@ target_link_libraries(show_order
 [ROS官网的CMakeLists文档](http://wiki.ros.org/catkin/CMakeLists.txt)
 [参考博客](https://blog.csdn.net/pbe_sedm/article/details/8826001)
 
-<br><br>
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

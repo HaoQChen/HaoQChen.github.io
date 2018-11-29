@@ -130,5 +130,7 @@ An example is the time synchronizer, which takes in messages of different types 
 [ROS一些传感器数据读取融合问题的思考](https://www.cnblogs.com/yhlx125/p/6818148.html)  
 [同时订阅两个话题？看到没测试过](https://answers.ros.org/question/193120/how-to-connect-a-tfmessagefilter-to-two-subscribers/)  
 
-<br><br>
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

@@ -308,5 +308,7 @@ public:
 HeapSort(test, 3, comp_class());
 ```
 
-<br><br>
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**

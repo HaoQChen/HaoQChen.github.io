@@ -134,5 +134,7 @@ int main(int argc, char** argv)
 
 不过只通过了测试用例，没上传到系统检验
   
-<br><br>
+<br>
+**喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
+
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**
