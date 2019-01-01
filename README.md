@@ -119,9 +119,13 @@ gem版本太低，更新步骤太复杂，放弃了。
 ## 谷歌分析
 在官网创建账号和地址什么的，然后将ID填到\_config.yml的`ga_track_id:`就好。
 
+## 自动化脚本
+增加了一个add\_new\_article.sh脚本，只要`add_new_article.sh article_title`就可以自动完成img中模板文件夹的复制，模板md文件的复制、重命名以及模板文件中一些基本信息的替换
+
 ## @TODO
 * 专栏
 * 能不能将给博客的点赞重定向到给github点赞
+
 
 
 **建议**
