@@ -21,6 +21,8 @@ tags:
 
 github地址：<https://github.com/HaoQChen/show_trajectory>
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 喜欢的帮我github点个赞，点个关注呗～～～～
 
 # 1. visualization_msgs/Marker

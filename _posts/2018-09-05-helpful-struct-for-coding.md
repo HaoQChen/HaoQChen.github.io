@@ -20,6 +20,8 @@ tags:
 本文总结了STL的编程常用数据结构，包括vector、list、stack、deque、字符串等。主要是为了方便日常编程使用，不用记得那么辛苦，也不用整天翻文档。
 
 喜欢的话收藏一个呗，博主会长期更新自己的学习和收获。
+
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 # 1. STL容器总结
 1. 序列容器：vector, list, deque, string.
 

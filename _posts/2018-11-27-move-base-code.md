@@ -17,9 +17,9 @@ tags:
 # 0. 写在最前面
 本文持续更新地址：<https://haoqchen.site/2018/11/27/move-base-code/>
 
-本文将介绍自己在看ROS的Navigation stack中的move\_base包源代码时的一些理解。作者的ROS版本是indigo,move\_base版本是1.12.13。如有错误，欢迎在评论中指正。
+本文将介绍自己在看ROS的Navigation stack中的move\_base包源代码时的一些理解。作者的ROS版本是indigo，move\_base版本是1.12.13。如有错误，欢迎在评论中指正。
 
-如果觉得写得还不错，就请收藏一下啦～～～后续想把整个Navigation看了。
+如果觉得写得还不错，就请收藏一下啦～～～也可以找一下我写的其他包的源码解读来看一下。
 
 # 1. package.xml与CMakeLists.txt
 **package**的介绍说，这个包提供了一个基于[actionlib](http://www.ros.org/wiki/actionlib)的实现，即提供一个目标点，move\_base会尝试通过全局以及局部的路径规划，让移动机器人移动到设定的目标点。  
@@ -40,7 +40,7 @@ move\_base维护了两种`costmaps`，分别给全局、局部规划器用。具
 关于[actionlib](http://wiki.ros.org/actionlib)我也不是很懂，就不坑大家了，大概就是ROS提供的一个基础框架，通过客户端向服务器发送一个goal，服务器做出相应处理。相对于基础的ROS service，该框架提供了取消请求、获取周期性反馈、抢占任务等功能，适合长时间的服务。MoveBase实现的就是服务器功能，我们就可以在其他地方声明客户端来申请相应的服务。
 ![actionlib_struct](/img/in_post/move_base_code/actionlib_struct.png)  
 
-## 2.1 重要成员
+## 2.1 重要成员及参数
 ```cpp
 MoveBaseActionServer* as_;//就是actionlib的服务器
 
@@ -67,6 +67,10 @@ std::vector<geometry_msgs::PoseStamped>* controller_plan_;
 
 //boost的一种结合了互斥锁的用法，可以使一个线程进入睡眠状态，然后在另一个线程触发唤醒。
 boost::condition_variable planner_cond_;
+```
+```
+recovery_behavior_enabled: true//是否启用recovery行为
+controller_frequency: 3.0//控制频率,可以理解为executeCycle函数调用频率
 ```
 ## 2.1 MoveBase(tf::TransformListener& tf)
 `move_base_node`中就只调用了这个构造函数。 
@@ -374,6 +378,8 @@ bool MoveBase::executeCycle(geometry_msgs::PoseStamped& goal, std::vector<geomet
 recovery是指恢复的规划器，其跟全局规划器和局部规划器是同一个等级的。不同的是，它是在机器人在局部代价地图或者全局代价地图中找不到路时才会被调用，比如[rotate_recovery](http://wiki.ros.org/rotate_recovery)让机器人原地360°旋转，[clear_costmap_recovery](http://wiki.ros.org/clear_costmap_recovery)将代价地图恢复到静态地图的样子。
 
 这些规划器都通过`nav_core::RecoveryBehavior`这个接口来被movebase调用。在movebase中，在构造函数通过`MoveBase::loadRecoveryBehaviors`和`MoveBase::loadDefaultRecoveryBehaviors()`两个函数来加载。一般情况下没有自定义则加载上述两个规划器。然后在`MoveBase::executeCycle`中视情况调用。
+
+用户可以通过将`recovery_behavior_enabled: false`参数设置为false来取消recovery行为
 
 
 # 参考

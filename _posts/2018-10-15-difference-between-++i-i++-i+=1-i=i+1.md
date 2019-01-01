@@ -18,6 +18,8 @@ tags:
 本文持续更新地址：<https://haoqchen.site/2018/10/15/difference-between-++i-i++-i+=1-i=i+1/>  
 面试被问到，上面这四个有什么区别。总结了一下，如果觉得还不错就关注一下博主呗，博主会长期更新自己的学习和收获。
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 # 1. 首先对于内置类型，对于现代编译器而言，这四个的效率都是没有区别的
 我在VS2013下进行编译运行，然后调试->窗口->反汇编，查看汇编代码后发现，这四个都是一样的。。。。。  
 ![++int](/img/in_post/i_plus_plus/plus_plus_int.png)  

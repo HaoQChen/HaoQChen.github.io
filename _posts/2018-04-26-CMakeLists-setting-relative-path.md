@@ -15,6 +15,8 @@ tags:
 --- 
 本文持续更新地址：<https://haoqchen.site/2018/04/26/CMakeLists-setting-relative-path/>
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 先看我的CMakeLists文件：
 ```cmake
 link_directories(libs/X64)

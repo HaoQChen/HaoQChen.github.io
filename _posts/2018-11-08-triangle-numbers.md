@@ -15,6 +15,8 @@ tags:
 --- 
 # 0. 写在最前面
 本文持续更新地址：<https://haoqchen.site/2018/11/08/triangle-numbers/>
+
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 # 1. 题目描述
 有n根长度不同的木棒，随意选取三根凑一个合法的三角形，求总拼凑方案的数量。对于两个方案，只要有一根木棒的长度不同，则视为不同拼凑方案。
 # 2. 输入

@@ -21,6 +21,8 @@ tags:
 
 很多ROS新手编写节点的时候都不知道要怎么才能Ctrl+c退出，根本都没有注意到一个节点的生命流程，看完你就懂了~~
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 先上程序：
 
 完整版工程已经上传到github：<https://github.com/HaoQChen/init_shutdown_test>，下载完麻烦大家点个赞

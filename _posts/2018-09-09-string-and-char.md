@@ -22,6 +22,8 @@ C++字符串处理有最原始的char以及string两种方式，这里对两种�
 
 如果觉得还不错就收藏一下呗，博主会长期更新自己的学习和收获。
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 |               |        string          |         char*、char[]        |
 |:------:|------|------|
 |**头文件**|#include \<string\>|不需要|

@@ -17,7 +17,9 @@ tags:
 
 本文将介绍自己在看ROS的Navigation stack中的map\_server包源代码时的一些理解。作者的ROS版本是indigo，map\_server版本是1.12.13。如有错误，欢迎在评论中指正。
 
-如果觉得写得还不错，就请收藏一下啦～～～后续想把整个Navigation看了。
+如果觉得写得还不错，就请收藏一下啦～～～也可以找一下我写的其他包的源码解读来看一下。关注一下我的专栏什么的。
+
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 
 # 1. package.xml与CMakeLists.txt
 **package**介绍中说，`mapserver提供了一个ROS节点，该节点通过一个ROS Service来提供地图数据，同时提供了一个命令行程序来动态地将生成的地图保存到文件中`。其依赖一些库，特别需要注意的是`sdl-image（用来加载地图图片）`、`yaml-cpp（配置中用到挺多yaml文件的）`和`tf`。

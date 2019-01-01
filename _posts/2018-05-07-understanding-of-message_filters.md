@@ -18,6 +18,8 @@ tags:
 本文持续更新地址：<https://haoqchen.site/2018/05/07/understanding-of-message_filters/>  
 　　因为日常看代码经常能看到tf相关的一些函数，转来转去，绕得很晕，有不懂的就仔细查一下，将自己的理解整理出来，这篇是关于 tf::MessageFilter的。
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 # 1. 两者的关系
 　　message_filters，顾名思义是消息过滤器；tf::MessageFilter，顾名思义是tf下的消息过滤器。消息过滤器为什么要用tf呢？tf::MessageFilter可以订阅任何的ROS消息，然后将其缓存，直到这些消息可以转换到目标坐标系，然后进行相应的处理（一般在回调函数中处理）。说白了就是消息订阅+坐标转换。实际上，后者继承于前者：
 ![relation](/img/in_post/understanding_of_message_filters/relation.png)

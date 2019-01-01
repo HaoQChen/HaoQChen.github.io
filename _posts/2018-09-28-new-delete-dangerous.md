@@ -17,6 +17,8 @@ tags:
 # 0. 写在最前面
 本文持续更新地址：<https://haoqchen.site/2018/09/28/new-delete-dangerous/>
 
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
+
 这里假设大家都知道怎么用new和delete来进行堆空间的申请和释放。这种错误比较难发现，希望大家引以为鉴。
 
 如果觉得还不错就关注一下呗，博主会长期更新自己的学习和收获。
