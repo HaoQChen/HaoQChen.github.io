@@ -19,7 +19,9 @@ tags:
 
 本文将介绍自己在看ROS的Navigation stack中的move\_base包源代码时的一些理解。作者的ROS版本是indigo，move\_base版本是1.12.13。如有错误，欢迎在评论中指正。
 
-如果觉得写得还不错，就请收藏一下啦～～～也可以找一下我写的其他包的源码解读来看一下。
+如果觉得写得还不错，就请收藏一下啦～～～也可以找一下我写的其他包的源码解读来看一下。关注一下我的专栏什么的。
+
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 
 # 1. package.xml与CMakeLists.txt
 **package**的介绍说，这个包提供了一个基于[actionlib](http://www.ros.org/wiki/actionlib)的实现，即提供一个目标点，move\_base会尝试通过全局以及局部的路径规划，让移动机器人移动到设定的目标点。  

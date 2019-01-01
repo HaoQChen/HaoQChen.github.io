@@ -27,7 +27,7 @@ tags:
 **package**说这个包目前提供了三个导航用到的，机器人特定动作的一般接口，分别是`BaseGlobalPlanner`, `BaseLocalPlanner`, `RecoveryBehavior`，即全局路径规划器、局部路径规划器和恢复行为规划器。接口的作用一般是为了统一不同规划器的输出、输入，使得后续程序可以适应不同规划器。
 
 **CMakeLists**`catkin_package`的作用是，当其他包`find_package(nav_core)`时，应该迭代依赖`std_msgs, geometry_msgs, tf, costmap_2d`四个包，并且`include`的路径。其实整个包只包含了三个文件：base\_global\_planner.h、base\_local\_planner.h、recovery\_behavior.h。这三个包分别定义了三个纯虚类，如下图所示：
-![move_base_interfaces](/img/in_post/nav_core_code/move_base_interfaces.png)
+<div align=center><img src="https://haoqchen.site/img/in_post/nav_core_code/move_base_interfaces.png"/></div>
 
 # <a id="1">1. base\_global\_planner.h<a/> 
 ```cpp
