@@ -71,6 +71,15 @@ int8[] data
 
 main函数中定义了一个`MapGenerator`类对象，该类初始化之后订阅`map`话题。在订阅的回调函数中，将订阅得到的map按照一定格式保存到当地的.pgm文件，同时将地图信息保存到对应的.yaml文件中。
 
+需要注意的是，如果你是想保存Cartographer生成的地图，是需要对源代码做一些修改的。因为Cartographer的map格式跟GMapping中的格式不太一样。具体不一样如下：
+
+| point type | GMapping value | Cartographer value |
+|:----:|:----:|:----:|
+| free | 0 | 0-N |
+| occupied | 100 | M-100 |
+| unknown | -1 | -1 & N-M |
+我按照这个不同对map_server包做了一些修改，详情看github：<https://github.com/HaoQChen/map_server>。如果觉得有用，记得star一下哦。
+
 # 参考
 * [map_server官网](http://wiki.ros.org/map_server)
 
