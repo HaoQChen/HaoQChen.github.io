@@ -43,7 +43,7 @@ target_link_libraries(show_order
 因为我这里用到了科大讯飞的一个链接库 libmsc.so，放到了我package目录下的libs/X64文件夹下，出于移植的考虑，不想使用绝对路径。所以这里使用link_directories添加相对路径的目录，然后在target_link_libraries中添加库目录名字。
 
 **注意：**
-1. **link_directories必须要放到add_executable前面，原因不明。**
+1. **link_directories必须要放到add_executable前面，因为这个命令只对后续命令生效。**
 2. **ROS官网建议不要使用link_directories，直接放在target_link_libraries中。我试过很多次，这样的话无法使用相对路径。不知道为何**
 
 **参考：**
