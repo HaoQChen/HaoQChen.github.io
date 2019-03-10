@@ -169,6 +169,8 @@ for(i_map = score.rbegin(); i_map != score.rend(); i_map++)
 //查找
 int count = score.count("stu2");//返回stu2出现的次数～～～因为是唯一的，so出现过就是1，没有就是0
 i_map = score.find("stu2");//返回迭代器，如果不是.end()就是存在的
+int a = i_map->second
+也可以使用[]方式进行查找，但是如果不存在，会以默认构造函数插入一个新的。
 //删除
 score.clear();//清空
 bool is_empty = score.empty();
