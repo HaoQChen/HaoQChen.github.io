@@ -109,7 +109,45 @@
 * [百度链接提交](https://ziyuan.baidu.com/linksubmit/url)。百度也有要验证网站的～～～我忘了当时是怎么进去的了。（github禁止了百度的爬虫，所以怎么设置，百度都不可能搜索到博客的。需要另外搞。）
 
 ## 安装本地调试
-gem版本太低，更新步骤太复杂，放弃了。
+1. 安装编译相关：
+   ```bash
+   sudo apt-get install build-essential
+   ```
+2. 安装ruby：
+   由于默认的安装版本太低，直接安装会出问题，要按照下面的安装：
+   ```bash
+   sudo add-apt-repository ppa:brightbox/ruby-ng
+   sudo apt-get update
+   sudo apt-get install ruby2.6 ruby2.6-dev
+   ```
+3. 安装并更新RubyGems：
+   ```bash
+   sudo apt-get install rubygems
+   sudo gem update --system
+   ```
+4. 安装NodeJS：
+   ```bash
+   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   ```
+5. 安装gem install jekyll：
+   ```bash
+   sudo gem install jekyll
+   sudo gem install github-pages
+   ```
+随后在自己的文件夹目录下创建一个`Gemfile`文件，将下面的内容填到该文件中
+
+```bash
+source 'https://rubygems.org'      
+gem 'github-pages'
+```
+
+随后执行以下命令即可在`http://localhost:4000`中看到自己的博客
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
 ## 域名
 尝试买了一个域名，想让百度搜索引擎能爬到，然后在coding.me上也弄一个类似github pages的，将百度或者国内的重定向到coding.me，最后放弃。目前域名全部重定向到给github pages，但github.io的域名就不能用了～～～～而且登记搜索引擎等等这些又要重新弄，很烦。
