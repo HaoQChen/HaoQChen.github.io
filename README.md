@@ -109,6 +109,13 @@
 * [百度链接提交](https://ziyuan.baidu.com/linksubmit/url)。百度也有要验证网站的～～～我忘了当时是怎么进去的了。（github禁止了百度的爬虫，所以怎么设置，百度都不可能搜索到博客的。需要另外搞。）
 
 ## 安装本地调试
+这个真的很多坑。。。。
+参考:
+[安装Jekyll本地调试环境](http://lazybios.com/2014/09/install-jekyll-in-locate/)
+[ubuntu16.04安装jekyll 3.3.1](https://www.cnblogs.com/litifeng/p/6337614.html)
+[Ubuntu 升级 Ruby](https://blog.csdn.net/henryhu712/article/details/89224467)
+[run jekyll serve failed ''cannot load such file -- jekyll-paginate](https://github.com/Huxpro/huxpro.github.io/issues/62)
+
 1. 安装编译相关：
    ```bash
    sudo apt-get install build-essential
@@ -142,7 +149,7 @@ source 'https://rubygems.org'
 gem 'github-pages'
 ```
 
-随后执行以下命令即可在`http://localhost:4000`中看到自己的博客
+随后执行以下命令即可在`http://127.0.0.1:4000/`中看到自己的博客
 
 ```bash
 bundle install
