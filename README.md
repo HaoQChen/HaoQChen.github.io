@@ -112,8 +112,11 @@
 这个真的很多坑。。。。
 参考:
 [安装Jekyll本地调试环境](http://lazybios.com/2014/09/install-jekyll-in-locate/)
+
 [ubuntu16.04安装jekyll 3.3.1](https://www.cnblogs.com/litifeng/p/6337614.html)
+
 [Ubuntu 升级 Ruby](https://blog.csdn.net/henryhu712/article/details/89224467)
+
 [run jekyll serve failed ''cannot load such file -- jekyll-paginate](https://github.com/Huxpro/huxpro.github.io/issues/62)
 
 1. 安装编译相关：
@@ -166,6 +169,30 @@ bundle exec jekyll serve
 
 ## 自动化脚本
 增加了一个add\_new\_article.sh脚本，只要`add_new_article.sh article_title`就可以自动完成img中模板文件夹的复制，模板md文件的复制、重命名以及模板文件中一些基本信息的替换
+
+## 修改字体
+需要在本地调试，然后改一堆东西。不是很懂，希望有前端的大佬给科普一下
+首先装用于实时更新css的`grunt`，除了第一个命令，其余需要在仓库目录下运行：
+```bash
+sudo npm install -g grunt-cli
+npm install grunt --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-less --save-dev
+npm install grunt-banner --save-dev
+npm install grunt-contrib-watch --save-dev
+```
+假设你已经在本地启动了server，那么再运行`grunt watch`，就可以将你在`./less/`文件加下的修改实时更新到博客（通过实时编译成`./css/`文件夹下的文件实现）。
+
+随后在`./less/hux-blog.less`中修改第一个p如下，然后再刷新下你的博客，是不是就可以修改了
+
+```less
+p {
+  margin: 30px 0;
+  font-size: 16px;//字体大小
+  line-height: 1.5;//行距
+  letter-spacing: 1px//每个字的间距
+}
+```
 
 ## @TODO
 * 专栏
