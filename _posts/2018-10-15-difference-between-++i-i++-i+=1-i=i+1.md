@@ -6,6 +6,7 @@ date:       2018-10-15
 author:     白夜行的狼
 header-img: img/in_post/i_plus_plus/post-bg-halting.jpg
 catalog: true
+categories: C++深入浅出
 tags:
     - 自增
     - 运算符重载

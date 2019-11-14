@@ -104,7 +104,7 @@
 ## 在谷歌、百度搜索引擎中登记自己的网站
 自己刚建的网站别人是搜索不到的，搜索引擎的爬虫不会这么快爬到你的网站，但是你可以在谷歌和百度中进行登记，这样可以加快进程(也要等几天)。  
 要查看自己的网站是否已经被某个搜索引擎收录，可以在搜索框中输入：`site:https://haoqchen.github.io/`  
-登记方法：  
+登记方法：  导航栏分级标题
 * Google网站站长[Google Search Console](https://search.google.com/search-console?hl=zh-CN)。在这里添加资源，并按要求验证即可。我是选择了第一个，下载html文件，然后放在主目录下（跟archive同一目录）。我不会用什么sitemap，就很蠢地一篇篇博客提交给Google去抓取，地址在`旧版Search Console->抓取>Google抓取工具`。添加每一篇的地址，然后点`抓取`，然后点`请求编入索引`（最好抓取一篇请求一篇，而且一次不要提交太多，隔天吧，我的请求到后面出现错误，不知道为什么）。这样你的博客就能出现在`site:https://haoqchen.github.io/`中了，也可以直接在Google中搜索到了。  
 * [百度链接提交](https://ziyuan.baidu.com/linksubmit/url)。百度也有要验证网站的～～～我忘了当时是怎么进去的了。（github禁止了百度的爬虫，所以怎么设置，百度都不可能搜索到博客的。需要另外搞。）
 
@@ -187,10 +187,37 @@ npm install grunt-contrib-watch --save-dev
 
 ```less
 p {
-  margin: 30px 0;
+  margin: 30px 0; //缩进
   font-size: 16px;//字体大小
   line-height: 1.5;//行距
   letter-spacing: 1px//每个字的间距
+}
+```
+
+上面的[导航栏分级标题](#导航栏分级标题)修改方法只是临时修改生成的css的，要想修改源码，可以在less/side-catalog.less中找到`h1_nav`这一项，然后按照你的需求改就好，比如我的：
+
+```less
+.h1_nav{
+            margin-left: 0;
+            font-size: 15px;
+            font-weight: bold;
+        }
+.h2_nav{
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.h3_nav{
+    margin-left: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+.h4_nav,.h5_nav,.h6_nav{
+    margin-left: 30px;
+    font-size: 10px;
+    a{
+        max-width: 170px;
+    }
 }
 ```
 

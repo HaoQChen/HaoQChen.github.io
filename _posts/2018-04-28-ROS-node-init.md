@@ -6,6 +6,7 @@ date:       2018-04-28
 author:     白夜行的狼
 header-img: img/in_post/ROS_node_init/post-bg-os-metro.jpg
 catalog: true
+categories: ROS实用小细节
 tags:
     - ros::init
     - ros::ok

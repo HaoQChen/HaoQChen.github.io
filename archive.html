@@ -1,10 +1,10 @@
 ---
-title: Archive
+title: 时间轴
 layout: default
 description: Stay Hungry, Stay Foolish
 header-img: "img/tag-bg.jpg"
 ---
-     
+
 <!-- 
 Credits: this page shamelessly borrowed a lot from:
 https://github.com/kitian616/jekyll-TeXt-theme
@@ -26,63 +26,62 @@ https://github.com/kitian616/jekyll-TeXt-theme
 				{% capture tags %}
 				{% for tag in site.tags %}
 				<a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
-					data-encode="{{ tag[0] | strip | url_encode }}"
-					class="tag-button"
-					title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+					data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
+					rel="{{ tag[1].size }}">
 					{{ tag[0] }}
 					<sup>{{tag[1].size}}</sup>
 				</a>
 				{% endfor %}
 				{% endcapture %}
-        {{ tags | split:'</a>' | sort | join:'</a>' }}
+				{{ tags | split:'</a>' | sort | join:'</a>' }}
 			</div>
 
-            <!-- Article List -->
+			<!-- Article List -->
 			<div class="mini-post-list js-result d-none">
-			{%- assign _sorted_list = site.posts -%}
-			{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
-			{%- assign _sorted_list = _sorted_list | reverse -%}
+				{%- assign _sorted_list = site.posts -%}
+				{%- assign _sorted_list = _sorted_list | sort: 'date' -%}
+				{%- assign _sorted_list = _sorted_list | reverse -%}
 
 
-			{%- for _article in _sorted_list -%}
+				{%- for _article in _sorted_list -%}
 				{%- assign _tags = '' -%}
 				{%- for _tag in _article.tags -%}
-					{%- assign _tag_encode = _tag | strip | url_encode -%}
-					{%- if forloop.last -%}
-						{%- assign _tags = _tags | append: _tag_encode -%}
-					{%- else -%}
-						{%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
-					{%- endif -%}
+				{%- assign _tag_encode = _tag | strip | url_encode -%}
+				{%- if forloop.last -%}
+				{%- assign _tags = _tags | append: _tag_encode -%}
+				{%- else -%}
+				{%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+				{%- endif -%}
 				{%- endfor -%}
 
-			{% comment %} group by year {% endcomment %}
-			{%- assign _currentdate = _article.date | date: '%Y-%m' -%}
-			{%- if _currentdate != _date -%}
+				{% comment %} group by year {% endcomment %}
+				{%- assign _currentdate = _article.date | date: '%Y-%m' -%}
+				{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
 				<section>
-				<span class="fa listing-seperator">
-					<span class="tag-text">{{ _currentdate }}</span>
-				</span>
-				{%- assign _date = _currentdate -%}
-			{%- endif -%}
+					<span class="fa listing-seperator">
+						<span class="tag-text">{{ _currentdate }}</span>
+					</span>
+					{%- assign _date = _currentdate -%}
+					{%- endif -%}
 
-				<div class="post-preview item" data-tags="{{ _tags }}">
-				    <a href="{{ _article.url | prepend: site.baseurl }}">
-				        <h2 class="post-title">
-                            {{ _article.title }}
-				        </h2>
-				        {% if _article.subtitle %}
-				        <h3 class="post-subtitle">
-				            {{ _article.subtitle }}
-				        </h3>
-				        {% endif %}
-				        <h4 class="post-date">
-				            {{ _article.date | date: '%Y-%m-%d' }}
-				        </h4>
-				    </a>
-					<hr>
-				</div>
-			{% endfor %}
+					<div class="post-preview item" data-tags="{{ _tags }}">
+						<a href="{{ _article.url | prepend: site.baseurl }}">
+							<h2 class="post-title">
+								{{ _article.title }}
+							</h2>
+							{% if _article.subtitle %}
+							<h3 class="post-subtitle">
+								{{ _article.subtitle }}
+							</h3>
+							{% endif %}
+							<h4 class="post-date">
+								{{ _article.date | date: '%Y-%m-%d' }}
+							</h4>
+						</a>
+						<hr>
+					</div>
+					{% endfor %}
+			</div>
 		</div>
 	</div>
-</div>

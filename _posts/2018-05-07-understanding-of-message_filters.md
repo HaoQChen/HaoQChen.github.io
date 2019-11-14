@@ -6,6 +6,7 @@ date:       2018-05-07
 author:     白夜行的狼
 header-img: img/in_post/understanding_of_message_filters/contact-bg.jpg
 catalog: true
+categories: ROS实用小细节
 tags:
     - message_filters
     - tf
