@@ -6,7 +6,7 @@ date:       2018-12-29
 author:     白夜行的狼
 header-img: img/in_post/nav_core_code/black.jpeg
 catalog: true
-categories: ROS Navigation源码完全详解
+categories: ROS&nbsp;Navigation源码完全详解
 tags:
     - nav_core
     - Navigation

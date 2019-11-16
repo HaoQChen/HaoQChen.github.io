@@ -6,7 +6,7 @@ date:       2018-11-27
 author:     白夜行的狼
 header-img: img/in_post/move_base_code/black.jpeg
 catalog: true
-categories: ROS Navigation源码完全详解
+categories: ROS&nbsp;Navigation源码完全详解
 tags:
     - Navigation
     - move_base
