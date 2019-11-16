@@ -6,6 +6,7 @@ date:       2018-05-25
 author:     白夜行的狼
 header-img: img/in_post/ROS_show_trajectory/post-bg-infinity.jpg
 catalog: true
+categories: ROS实用小细节
 tags:
     - visualization_msgs/Marker
     - rviz轨迹

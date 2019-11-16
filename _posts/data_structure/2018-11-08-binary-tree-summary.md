@@ -6,6 +6,7 @@ date:       2018-11-08
 author:     白夜行的狼
 header-img: img/in_post/binary_tree_summary/black.jpeg
 catalog: true
+categories: 数据结构
 tags:
     - 二叉树
     - 面试、笔试

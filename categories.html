@@ -14,12 +14,18 @@ multilingual: false
     <div id="#{{ category_name | slugize }}"></div>
     <p></p>
 
-    <h3 class="category-head">{{ category_name }}</h3>
+    <h2 class="category-head">{{ category_name }}</h2>
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
+      <article class="archive-item">
+        <h4>
+            <li>
+            <span>{{ post.date | date: '%Y-%m-%d' }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+            <hr>
+            </li>
+        </h4>
+      </article>
     {% endfor %}
   </div>
   {% endfor %}

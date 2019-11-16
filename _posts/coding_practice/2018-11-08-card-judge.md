@@ -6,6 +6,7 @@ date:       2018-11-08
 author:     白夜行的狼
 header-img: img/in_post/card_judge/black.jpeg
 catalog: true
+categories: C++编程实践
 tags:
     - 扑克牌
     - 判断输赢

@@ -6,6 +6,7 @@ date:       2018-10-10
 author:     白夜行的狼
 header-img: img/in_post/all_kind_of_sort/black.jpeg
 catalog: true
+categories: 数据结构
 tags:
     - 排序算法
     - 快速排序

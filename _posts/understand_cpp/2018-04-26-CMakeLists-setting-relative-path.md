@@ -6,6 +6,7 @@ date:       2018-04-26
 author:     白夜行的狼
 header-img: img/about-bg-walle.jpg
 catalog: true
+categories: C++深入浅出
 tags:
     - ROS
     - CMakeLists

@@ -6,6 +6,7 @@ date:       2018-09-05
 author:     白夜行的狼
 header-img: img/in_post/helpful_struct_for_coding/black.jpeg
 catalog: true
+categories: 数据结构
 tags:
     - vector
     - list

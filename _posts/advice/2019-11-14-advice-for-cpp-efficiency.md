@@ -4,8 +4,9 @@ title:      关于提高C++效率的几点建议
 subtitle:   深入理解C++
 date:       2019-11-14
 author:     白夜行的狼
-header-img: img/in_post/article_name/black.jpeg
+header-img: img/black.jpeg
 catalog: true
+categories: [C++深入浅出, 编程经验小结]
 tags:
     - 
     - 

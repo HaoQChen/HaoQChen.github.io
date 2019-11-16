@@ -4,8 +4,9 @@ title:      关于用户界面编写的几点建议
 subtitle:   过来人的建议
 date:       2019-09-14
 author:     白夜行的狼
-header-img: img/in_post/article_name/black.jpeg
+header-img: img/black.jpeg
 catalog: true
+categories: 编程经验小结
 tags:
     - 
     - 

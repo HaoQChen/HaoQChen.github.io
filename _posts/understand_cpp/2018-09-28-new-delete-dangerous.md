@@ -6,6 +6,7 @@ date:       2018-09-28
 author:     白夜行的狼
 header-img: img/in_post/new_delete_dangerous/404-bg.jpg
 catalog: true
+categories: C++深入浅出
 tags:
     - 危险函数
     - 数组越界

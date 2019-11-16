@@ -6,6 +6,7 @@ date:       2018-11-08
 author:     白夜行的狼
 header-img: img/in_post/triangle_numbers/black.jpeg
 catalog: true
+categories: C++编程实践
 tags:
     - 腾讯后台
     - 编程题

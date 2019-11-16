@@ -6,6 +6,7 @@ date:       2018-09-09
 author:     白夜行的狼
 header-img: img/in_post/string_and_char/black.jpeg
 catalog: true
+categories: 数据结构
 tags:
     - char
     - string

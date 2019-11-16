@@ -6,6 +6,7 @@ date:       2018-11-08
 author:     白夜行的狼
 header-img: img/in_post/arithmetic_progression_recovery/black.jpeg
 catalog: true
+categories: C++编程实践
 tags:
     - 小马智行
     - 等差数列

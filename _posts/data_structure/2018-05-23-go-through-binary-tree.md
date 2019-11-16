@@ -6,6 +6,7 @@ date:       2018-05-23
 author:     白夜行的狼
 header-img: img/in_post/go_through_binary_tree/black.jpeg
 catalog: true
+categories: 数据结构
 tags:
     - 前序遍历
     - 中序遍历
