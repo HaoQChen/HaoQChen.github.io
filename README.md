@@ -231,6 +231,10 @@ p {
 2. 新建一个`categories.html`放在主目录下，文件内容可直接看我的源码
 3. 在每篇文章的适当位置增加指向`categories.html`的链接。我主要是通过修改`intro-header.html`中的文章标题部分实现的。详见代码中`<header class="intro-header style-text">`部分
 
+但是一定要注意，根据[Jekyll官网永久链接](http://jekyllcn.com/docs/permalinks/)的描述，文章生成的链接默认是`/:categories/:year/:month/:day/:title/`。如果没有分类名就留空，有分类名会导致以前的链接都不能用，需要修改`_config.yml`中的`permalink`为`/:year/:month/:day/:title/`。
+
+
+
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
 * 能不能将给博客的点赞重定向到给github点赞
