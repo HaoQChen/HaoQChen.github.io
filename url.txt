@@ -23,3 +23,6 @@ https://haoqchen.site/2018/11/08/heteromery/
 https://haoqchen.site/2018/11/08/triangle-numbers/
 https://haoqchen.site/2018/11/27/move-base-code/
 https://haoqchen.site/2018/11/27/map_server/
+https://haoqchen.site/2019/11/14/advice-for-ui/
+https://haoqchen.site/2019/11/14/advice-for-cpp-efficiency/
+https://haoqchen.site/2019/01/01/costmap-2d/
