@@ -6,7 +6,7 @@ date:       2019-09-14
 author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
-categories: 编程经验小结
+categories: 经验小结
 tags:
     - 
     - 
@@ -20,6 +20,10 @@ tags:
 本文持续更新地址：<https://haoqchen.site/2019/11/14/advice-for-ui/>
 
 本文档介绍一些编写UI界面时的建议，主要是日常工作中发现的，能够帮助提升代码质量，提高用户体验的方法和技巧。我曾经用过Matlab、Qt、MFC、Labview来编写界面，都会涉及到与硬件的交互，个人感觉最强的是Qt。
+
+如果觉得写得还不错，可以找我其他文章来看看哦～～～可以的话帮我github点个赞呗。
+
+**你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 
 # 1. 对UI的 一点想法
 
