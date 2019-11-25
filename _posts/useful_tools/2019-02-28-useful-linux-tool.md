@@ -36,7 +36,7 @@ cat /proc/cpuinfo | grep flags
 
 ### 1.1.2 运行状态监视
 * **indicator-sysmonitor**：可以监视CPU、内存占用率；网速；电池电量；IP；硬盘剩余大小。可以像下面这样显示在右上角状态栏，很方便。
-  ![](../../img/in_post/useful_linux_tool/indicator.png)
+  ![](/img/in_post/useful_linux_tool/indicator.png)
   安装方法：
   ```bash
   sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  

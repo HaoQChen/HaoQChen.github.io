@@ -42,7 +42,7 @@ Eigen其实只是一个纯头文件的库，你直接安装放到include目录�
 
 出现这个问题主要是因为eigen3的文件结构导致的：
 
-![](../../img/in_post/eigen_directory_error/eigen_file_constructure.png)
+![](/img/in_post/eigen_directory_error/eigen_file_constructure.png)
 
 如图，编译器会直接去`/usr/local/include`或者`/usr/include`目录找头文件，但是找到的是eigen3，并没有Eigen和unsupported。所以我们可以建立一个软连接到这两个文件夹。
 

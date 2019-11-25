@@ -21,7 +21,7 @@ tags:
 
 为了测试方便，我有多个工作空间。不同工作空间会存在一些同名的包。按照[官网教程](http://wiki.ros.org/cn/ROS/Tutorials/InstallingandConfiguringROSEnvironment)的说法，只要source了setup就可以将当前工作空间设置为ROS顶层。一天在测试的时候发现，并不能通过修改`.bashrc`来修改当前活跃的工作空间。之前source的工作空间仍然存在，一直调用的是之前的工作空间的包。
 
-![](../../img/in_post/ros_same_ws_bug/my_source.png)
+![](/img/in_post/ros_same_ws_bug/my_source.png)
 
 如果觉得写得还不错，可以找我其他文章来看看哦～～～可以的话帮我github点个赞呗。
 **你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**

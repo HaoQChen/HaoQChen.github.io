@@ -29,7 +29,7 @@ Ubuntu1404下运行`sudo apt-get update`出现warning`Ignoring Provides line wit
 
 经过查找后发现是因为系统的apt版本太低，导致一些包安装不了，需要更新apt。
 
-![](../../img/in_post/apt_version_error/apt_error.png)
+![](/img/in_post/apt_version_error/apt_error.png)
 
 但这个warning是影响不大的，如果不必要，最好还是不要更新apt
 

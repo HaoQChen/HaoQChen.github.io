@@ -39,11 +39,11 @@ Remmina是一个集成多种协议的远程连接终端，Ubuntu系统中自带�
 
 将`enable`勾上，将加密`requre-encryption`去掉，并将`prompt enabled`去掉，如下图所示：
 
-![](../img/in_post/remmina_usage/dconf.png)
+![](/img/in_post/remmina_usage/dconf.png)
 
 设置完成后，你也可以在`桌面共享`（英文`Desktop Sharing`）中进行其他的一些设置，比如要求每次连接都要确认，展示消息等。
 
-![](../img/in_post/remmina_usage/share_preference.png)
+![](/img/in_post/remmina_usage/share_preference.png)
 
 # 2. 设置B支持文件共享
 需要安装`ssh-server`来实现文件共享。
@@ -53,21 +53,21 @@ Remmina是一个集成多种协议的远程连接终端，Ubuntu系统中自带�
 # 3. 设置A远程连接客户端
 运行`Remmina`客户端，直接在查找中输入程序名，或者在终端输入后按`tab`即可。
 
-![](../img/in_post/remmina_usage/search_remmina.png)
+![](/img/in_post/remmina_usage/search_remmina.png)
 
 运行后在界面中按那个`+`号，新添加一个远程连接
 
-![](../img/in_post/remmina_usage/add_client.png)
+![](/img/in_post/remmina_usage/add_client.png)
 
 自己定一个名字，协议这里选择`VNC虚拟网络电脑`，server输入远程电脑IP地址，用户名、密码输入远程电脑的用户名和密码。保存后双击即可远程连接。
 
-![](../img/in_post/remmina_usage/client_name.png)
+![](/img/in_post/remmina_usage/client_name.png)
 
 如果需要进行文件共享，则还需要设置旁边的SSH：
 
 设置远程电脑的用户名，选择密码登录，保存。
 
-![](../img/in_post/remmina_usage/ssh_enable.png)
+![](/img/in_post/remmina_usage/ssh_enable.png)
 
 
 然后双击就大功告成啦

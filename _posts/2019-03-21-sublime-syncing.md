@@ -62,7 +62,7 @@ Ctrl + `打开Sublime Text的命令行，在其中输入以下命令并按下确
 
 **PS：我的配置github地址**：<https://github.com/HaoQChen/SublimeSetting>参考很多博客配置的，最终样子长这样：
 
-![](../img/in_post/sublime_syncing/my_sublime.png)
+![](/img/in_post/sublime_syncing/my_sublime.png)
 
 喜欢的话帮我github点个赞呗。
 
