@@ -1,92 +1,32 @@
 ---
-layout: default
-title: 分类
-description: 
-header-img: "/img/black.jpeg"
+layout: page
+title: "分类"
+description: ""
+header-img: "img/black.jpeg"
 multilingual: false
 ---
 
-<header class="intro-header" style="background-image: url('{{ site.BASE_PATH }}{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>
-                      {% if page.title %}
-                        {{ page.title }}
-                      {% else %}
-                        {{ site.title }}
-                      {% endif %}
-                    </h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">{{ page.description }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
-<div class="row">
-
-<div class="col-lg-2 col-lg-offset-1 col-sm-2 col-sm-offset-2 col-xs-5">
-    <ul class="nav nav-tabs-vertical" style="margin-top: 10px">
-      {% assign categories_list = site.categories %}
-      {% if categories_list.first[0] == null %}
-        {% for category in categories_list %}
-          <h3>
-            <li>
-                <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category | replace:' ','-' }}-ref" data-toggle="tab">
-                  {{ category | capitalize }} <span class="badge pull-right">{{ site.categories[category].size }}</span>
-                </a>
-            </li>
-          </h3>
-        {% endfor %}
-      {% else %}
-        {% for category in categories_list %}
-            <li>
-              <h3>
-                <a href="{{ site.BASE_PATH }}/{{ site.categories_path }}#{{ category[0] | replace:' ','-' }}-ref" data-toggle="tab">
-                    {{ category[0] | capitalize }} <span class="badge pull-right">{{ category[1].size }}</span>
-                </a>
-                <hr>
-              </h3>
-            </li>
-        {% endfor %}
-      {% endif %}
-      {% assign categories_list = nil %}
-    </ul>
-</div>
-
-<!-- Tab panes -->
-
-<div class="tab-content col-sm-8 col-xs-7 col-lg-6 col-lg-offset-1">
+<div id="archives">
   {% for category in site.categories %}
-    <div class="tab-pane" id="{{ category[0] | replace:' ','-' }}-ref">
-      <h3 style="margin-top: 0px">Posts in {{ category[0] | capitalize }}</h3>
-      <br></br>
-      <div class="archive-group">
-        {% assign pages_list = category[1] %}
-        {% for node in pages_list %}
-          {% if node.title != null %}
-            <!-- {% if group == null or group == node.group %} -->
-            <article class="archive-item">
-              <h4>
-                <li>
-                  <span>{{ node.date | date: '%Y-%m-%d' }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                  <a href="{{ site.baseurl }}{{ node.url }}">{{node.title}}</a>
-                  <hr>
-                </li>
-              </h4>
-            </article>
-            <!-- {% endif %} -->
-          {% endif %}
-        {% endfor %}
-        {% assign pages_list = nil %}
-      </div>
-    </div>
+  <div class="archive-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <div id="#{{ category_name | slugize }}"></div>
+    <p></p>
+
+    <h2 class="category-head">{{ category_name }}</h2>
+    <a name="{{ category_name | slugize }}"></a>
+    {% for post in site.categories[category_name] %}
+      <article class="archive-item">
+        <h4>
+            <li>
+            <span>{{ post.date | date: '%Y-%m-%d' }}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+            <hr>
+            </li>
+        </h4>
+      </article>
+    {% endfor %}
+  </div>
   {% endfor %}
 </div>
-
-</div>
-
-<div class="clearfix"></div>

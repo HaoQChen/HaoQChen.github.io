@@ -1,0 +1,15 @@
+<section>
+    <hr>
+    <h5><a href="{{'/categories/' | prepend: site.baseurl }}">分类</a></h5>
+    <!-- <ul> -->
+        {% for category in site.categories %}
+          {% capture category_name %}{{ category | first }}{% endcapture %}
+          <li>
+            <a href="{{site.baseurl}}/categories/#{{category_name|slugize}}">
+                {{ category_name }} <span>({{ category[1].size }})</span>
+            </a>
+            <hr>
+          </li>
+        {% endfor %}
+    <!-- </ul> -->
+</section>
