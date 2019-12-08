@@ -244,20 +244,24 @@ p {
 具体做法是将404.html的内容换成下面这样的：
 
 ```html
----
-layout: default
-title: 404
-hide-in-nav: true
-description: "宝贝回家"
-header-img: "img/404-bg.jpg"
-permalink: /404.html
----
-
-<script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="/"
-	homePageName="回到我的主页">
-</script>
-<script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-<script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8;"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="robots" content="all" />
+  <meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
+</head>
+<body>
+  <script type="text/plain" src="http://www.qq.com/404/search_children.js"
+          charset="utf-8" homePageUrl="/"
+          homePageName="回到我的主页">
+  </script>
+  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
+  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
+</body>
+</html>
 ```
 
 ## 不显示某篇文章
@@ -266,6 +270,7 @@ permalink: /404.html
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
 * 能不能将给博客的点赞重定向到给github点赞
+* 代码高亮[GJXS1980的博客](https://github.com/GJXS1980/gjxs.github.io)
 
 
 

@@ -40,9 +40,9 @@ tags:
 
 # 2. vector的几点注意事项
 
-# 2.1 size和
+## 2.1 size和
 
-# 2.1 swap和clear和
+## 2.1 swap和clear和
 
 
 # 参考
