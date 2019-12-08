@@ -14,6 +14,7 @@
  <!-- canvas-nest.min.js -->
 <script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script>
 ```
+更喜欢简介一点，尤其手机看起来很乱，所以注释掉了这个。
 
 ## 返回顶部  
 把在rocket.css、signature.css和toc.css下载到css的目录下，然后在 include目录下的head.html文件的头部添加下面代码：  
@@ -107,6 +108,9 @@
 登记方法：  导航栏分级标题
 * Google网站站长[Google Search Console](https://search.google.com/search-console?hl=zh-CN)。在这里添加资源，并按要求验证即可。我是选择了第一个，下载html文件，然后放在主目录下（跟archive同一目录）。我不会用什么sitemap，就很蠢地一篇篇博客提交给Google去抓取，地址在`旧版Search Console->抓取>Google抓取工具`。添加每一篇的地址，然后点`抓取`，然后点`请求编入索引`（最好抓取一篇请求一篇，而且一次不要提交太多，隔天吧，我的请求到后面出现错误，不知道为什么）。这样你的博客就能出现在`site:https://haoqchen.github.io/`中了，也可以直接在Google中搜索到了。  
 * [百度链接提交](https://ziyuan.baidu.com/linksubmit/url)。百度也有要验证网站的～～～我忘了当时是怎么进去的了。（github禁止了百度的爬虫，所以怎么设置，百度都不可能搜索到博客的。需要另外搞。）
+
+注：新版Google站长网站不支持一篇一篇添加，我参考[jekyll-sitemap插件](https://github.com/jekyll/jekyll-sitemap)自动生成了sitemap，也就是在`_config.yml`中添加了`plugins: [jekyll-paginate, jekyll-sitemap]`，然后在站长网站->站点地图->添加新的站点地图中填上`sitemap.xml`
+
 
 ## 安装本地调试
 这个真的很多坑。。。。
@@ -233,7 +237,31 @@ p {
 
 但是一定要注意，根据[Jekyll官网永久链接](http://jekyllcn.com/docs/permalinks/)的描述，文章生成的链接默认是`/:categories/:year/:month/:day/:title/`。如果没有分类名就留空，有分类名会导致以前的链接都不能用，需要修改`_config.yml`中的`permalink`为`/:year/:month/:day/:title/`。
 
+## 404改成宝贝回家
 
+在[wordzzzz的博客](https://wordzzzz.github.io/404.html)中看到404变成了宝贝回家的页面，深受感动，所以将自己的404也变成了宝贝回家。
+
+具体做法是将404.html的内容换成下面这样的：
+
+```html
+---
+layout: default
+title: 404
+hide-in-nav: true
+description: "宝贝回家"
+header-img: "img/404-bg.jpg"
+permalink: /404.html
+---
+
+<script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="/"
+	homePageName="回到我的主页">
+</script>
+<script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
+<script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
+```
+
+## 不显示某篇文章
+比如正在创作中，不想别人看到，可以在文章头部增加一个`published: false`就可以了。
 
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”

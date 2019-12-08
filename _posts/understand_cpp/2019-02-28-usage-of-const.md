@@ -50,16 +50,16 @@ void saveImage(const Mat& m, const string path)
 # 在指针前后
 如果是普通类型，那大家应该都知道，表明这个变量是常量，不可变，如
 ```cpp
-const int kValue；
-int const kValue；
+const int kValue;
+int const kValue;
 ```
 但如果用const修饰的指针，const在前还是在后就差距很大了。
 ```cpp
 //kValue是常量指针，其指向的值不可变
-const int* kValue；
-int const *kValue；//不建议这种写法
+const int* kValue;
+int const *kValue;//不建议这种写法
 //kPointer是常指针，指针本身不可变
-int* const kPointer；
+int* const kPointer;
 //两者都不可变
 const int* const kPV
 ```

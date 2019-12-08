@@ -62,6 +62,86 @@ for (int i = 0; i < 6; ++i)
 }
 ```
 
+## 2.5. 不要在状态判断中进行大量耗时操作
+类似下面这样的操作
+```cpp
+if (is_connected_)
+{
+    for (int i = 0; i < 10; ++i)
+    {
+        doHardWorking();
+    }
+    doHardWork2();
+}
+```
+
+其中`doHardWorking()`需要`is_connected_ == true`才能工作，而且`doHardWorking()`耗时很长。
+
+这样处理的最大问题是，用户可能在其他线程或者中断中修改了`is_connected_`的状态，导致`doHardWorking()`一直处于卡死状态。
+
+如果非要做这种耗时且循环的操作，建议改成每次运行前判断一次：
+
+```cpp
+
+for (int i = 0; i < 10; ++i)
+{
+    if (is_connected_)
+    {
+        doHardWorking();
+    }
+}
+if (is_connected_)
+{
+    doHardWorking2();
+}
+```
+
+## 2.6 定义时便明确状态变量的意义
+
+比如`is_start_`、`is_working_`、`is_stoping_`，你可能会定义一堆这样的状态变量，然后在整个程序中使用。
+
+问题在于，时间久了，你可能也忘记了哪个变量是什么含义，别人看可能会更乱。另外有些模糊边界到底用哪个比较好？
+
+建议在定义前先仔细思考整个程序到底需要哪些状态，定义的时候在后面注释明确每个变量的具体使用场景
+
+比如：
+
+```cpp
+bool is_start_; // user push the start button
+bool is_working_; // computer connect with robot, and start to control it
+bool is_stoping_; // user push the stop button, after stop the robot, is_working_ will be false
+```
+
+## 2.7 编程时考虑线程间同步问题
+
+带UI的工程往往是一个线程在维护UI的交互，另外至少一个线程在运行其他正常功能。尽量想清楚哪些变量是会同时在两个线程出现的，做好同步处理。但往往设计时没有那么清晰的界限，写着写着就混用了，工程大了出了BUG非常难定位和补救。
+
+## 2.8 状态变量流程化
+
+凡涉及交互的，包括跟用户交互，机器人跟程序的交互等，都不是一个瞬间就能完成的过程。拿机器人跟电脑交互举例，他的过程可能包括：`连接成功`->`启动`->`行进`->`停车ing`->`完全停止`->`断开连接`。
+
+如果对于上面的状态都弄一个状态变量，就有6个之多，而且非常容易造成混乱。很多时候，这些都是顺序的，没连接成功就不可能启动，没启动就不可能行进，没行进就无所谓停车，没有停车ing就没有完全停止的说法。所以可以用一个`enum`来管理这些状态：
+```cpp
+enum{
+    ROBOT_STATE_CONNECTED = 0,
+    ROBOT_STATE_ON,
+    ROBOT_STATE_RUNNING,
+    ROBOT_STATE_STOPPING,
+    ROBOT_STATE_STOPED,
+    ROBOT_STATE_DISCONNECT
+};
+int state = ROBOT_STATE_DISCONNECT;
+if (state > ROBOT_STATE_ON){
+    runRobot();
+}
+```
+
+## 2.9 考虑用户重复按同一个键
+
+相信大家都会有过这样的体验，因为不确定有没有按对按键，会一直重复按一个按钮。比如计算器中进行+2操作，如果按键的回调函数不做重复考虑，按了n次就会调用n次，你要确定这是否是用户想要的？
+
+可以通过一些状态设置去判断该回调是否已经被调用过，重复按时进行其他提醒。
+
 # 参考
 
 <br>
