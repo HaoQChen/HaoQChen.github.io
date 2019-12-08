@@ -63,8 +63,9 @@
                             {% else %}
                             {% assign categories = page.categories %}
                             {% endif %}
+                            <a>分类：</a>
                             {% for category in categories %}
-                            <a href="{{site.baseurl}}/categories/#{{category|slugize}}">分类：{{category}}</a>
+                            <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
                             {% unless forloop.last %}&nbsp;{% endunless %}
                             {% endfor %}
                         </h2>
