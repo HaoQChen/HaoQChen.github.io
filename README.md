@@ -267,6 +267,38 @@ p {
 ## 不显示某篇文章
 比如正在创作中，不想别人看到，可以在文章头部增加一个`published: false`就可以了。
 
+## 增加赞赏功能
+参考[一之笔的博客](https://github.com/yizibi/yizibi.github.io)，首先将`reward.css`放到css文件夹下，然后修改`_layouts->post.html`，在{{content}}后面增加以下内容：
+
+```html
+<!-- 打赏功能 -->
+<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+<div>
+    <hr>
+    <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+        <div id="wechat"><p>如果你觉得这篇文章帮你节省了时间，增长了知识，请支持我写出更多这样的文章</p></div>
+        <br>
+        <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+            <span>打赏</span>
+        </button>
+        <div id="QR" style="display: none;">              
+            <div id="wechat" style="display: inline-block">
+                <img id="wechat_qr" src="/img/reward/wechat.png" alt="白夜行的狼 微信支付"/>
+                <p>微信支付</p>
+            </div>
+                                
+            <div id="alipay" style="display: inline-block">
+                <img id="alipay_qr" src="/img/reward/alipay.png" alt="白夜行的狼 支付宝"/>
+                <p>支付宝</p>
+            </div>
+        </div>
+    </div>
+    <hr>     
+</div>
+```
+
+
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
 * 能不能将给博客的点赞重定向到给github点赞
