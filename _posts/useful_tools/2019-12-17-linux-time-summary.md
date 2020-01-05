@@ -65,6 +65,7 @@ printf("Cost time: %ld ms\n", time_cost);
 ```
 
 ## 1.2 times
+
 |项目|说明|备注|
 |:---:|:---|:---|
 |头文件|#include <sys/times.h>||
@@ -86,7 +87,7 @@ struct tms {
 
 |项目|说明|备注|
 |:---:|:---|:---|
-|头文件|#include <time.h>||
+|头文件|#include \<time.h\>||
 |原型|int clock_gettime(clockid_t clk_id, struct timespec *tp);||
 |功能|获取系统某一时钟从`Epoch`到当前的时间，可精确到纳秒||
 |return|成功返回0，失败返回-1||
