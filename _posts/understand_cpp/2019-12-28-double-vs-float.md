@@ -50,7 +50,7 @@ tags:
 相对的，double的优点有：
 1. **精度高**。《C++  Primer Plus(第6版)》中举了一个例子，10.0/3.0*1.0e6，float只有3333333.25，而double能精确到3333333.333333。。。对于精度要求非常高的运算，float的误差是不能容忍的。
 
-下面是我从**普通加减乘除对比**、**硬盘读写对比**、**复杂函数**三个方面做的一个实验对比，如果有兴趣也可以在你自己的电脑上做个对比。
+下面是我从**普通加减乘除对比**、**硬盘读写对比**、**复杂函数**、**Eigen矩阵运算**四个方面做的一个实验对比，如果有兴趣也可以在你自己的电脑上做个对比。
 
 # 2. 普通加减乘除对比
 
@@ -156,7 +156,7 @@ g++ cpp_test.cpp -std=c++11 -o cpp_test -O0
     }
     ```
 
-2. 对于**普通的加减乘除**，两者的运算时间不会有太大的区别。因为目前CPU中的加法器位数远不止64位，运算一个32位和运算一个64位的数据对他们来说没有太大区别。但对于一些**优化指令集**就不一样了，比如SSE（仅支持单精度的浮点运算）、SSE2、SSE3等。这些指令集有专门对整形和浮点型做运算优化，尤其是一些向量运算和矩阵运算。比如SSE2使用了128位的运算单元，可以同时运算4个32位的浮点数或者2个64位的浮点数。根据[g++官方文档](https://gcc.gnu.org/onlinedocs/gcc-4.4.7/gcc/i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options)的说法，g++是默认开启`SSE×`指令集的，但上面其实并没有并行运算，所以效果并不明显。
+2. 对于**普通的加减乘除**，两者的运算时间不会有太大的区别。因为目前CPU中的加法器位数远不止64位，运算一个32位和运算一个64位的数据对他们来说没有太大区别。但对于一些**优化指令集**就不一样了，比如SSE（仅支持单精度的浮点运算）、SSE2、SSE3等。这些指令集有专门对整形和浮点型做运算优化，尤其是一些向量运算和矩阵运算。比如SSE2使用了128位的运算单元，可以同时运算4个32位的浮点数或者2个64位的浮点数。根据[g++官方文档](https://gcc.gnu.org/onlinedocs/gcc-4.4.7/gcc/i386-and-x86_002d64-Options.html#i386-and-x86_002d64-Options)的说法，g++是默认开启`SSE×`指令集的，但上面其实并没有并行运算，所以效果并不明显。具体可对比本文第4章。
 
 # 2. 硬盘读写对比
 
@@ -255,8 +255,10 @@ int main(int argc, char **argv)
 
 1. 首先对于10~1万的数据，初步猜测哪个放前面，哪个消耗的时间就比较多的原因是，程序获取硬盘的系统资源需要一定的时间，这个时间几乎都消耗在第一次获取的时间上，后面该程序会一直持有，时间不再消耗在获取上。
 2. 对于10~1万的数据，综合两个顺序的时间来看，double仍然要比float慢一点。
-3. 写入的时间大学比读取的时间慢40%。
+3. 写入的时间大约比读取的时间慢40%。
 4. 对于10万～1亿的数据，无论哪种顺序，double都要比float慢，写入的速度float:double最后差不多稳定在32:39，读取速度差不多稳定在23:29。
+5. 当写入量达到1亿的时候，生成的文件大小对比：
+   ![](/img/in_post/double_vs_float/output_txt.png)
 
 
 # 3. 复杂函数
@@ -324,8 +326,64 @@ int main(int argc, char **argv)
 3. 在查找`cos`的头文件发现，`math.h`中的函数都是用了`SIMD`来实现的，SIMD是Single Instruction，Multiple Data的缩写——意为单指令多数据。具体细节还没时间研究，可以肯定的是，这里面利用了SSE等指令集进行了并行优化。
 4. 另外也测试了`log`和`logf`的区别，两者的时间差会更加明显，最终稳定的时间比约1.6:2.5
 
+# 4. Eigen矩阵运算
+
+**测试代码：**
+
+```cpp
+int main(int argc, char **argv)
+{
+    if (argc != 2){
+        std::cerr << "Please run as: cpp_test 1000" << std::endl \
+                  << "with 1000 means loop count" << std::endl;
+        return -1;
+    }
+
+    std::size_t loop_count = stoul(std::string(argv[1]));
+    volatile std::size_t i = 0; // 要求编译器每次都直接读取原始内存地址，防止编译器对循环做优化
+
+    MatrixXf float_m1 = MatrixXf::Random(loop_count, loop_count);
+    MatrixXf float_m2 = MatrixXf::Random(loop_count, loop_count);
+    MatrixXd double_m1 = MatrixXd::Random(loop_count, loop_count);
+    MatrixXd double_m2 = MatrixXd::Random(loop_count, loop_count);
+
+    struct timespec time_1;
+    struct timespec time_2;
+
+    struct timespec time_start;
+    clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_start);
+
+// float 循环做加减乘除
+    MatrixXf float_p = float_m1 * float_m2;
+    clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_1);
+// double eigen矩阵相乘
+    MatrixXd double_p = double_m1 * double_m2;
+    clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_2);
+
+    std::cout << "float  Eigen * time O0: " << time2String(time_start, time_1) << "s" << std::endl;
+    std::cout << "double Eigen * time O0: " << time2String(time_1, time_2) << "s" << std::endl;
+}
+```
+使用以下命令进行编译：
+
+```bash
+g++ cpp_test.cpp -std=c++11 -o cpp_test -I /usr/include/eigen3 -O0
+```
+
+**测试结果：**
+
+|乘法|加法|
+|:---:|:---:|
+|![](/img/in_post/double_vs_float/eigen_multiply.png)|![](/img/in_post/double_vs_float/eigen_plus.png)|
+
+**总结：**
+
+Eigen内部是利用SSE指令集进行优化的，当数据量非常大的时候，double所用的时间就接近于float的两倍了，这是非常明显的提升。
+
+
 # 参考
 + C++  Primer Plus(第6版)
++ [Eigen的速度为什么这么快？](https://www.zhihu.com/question/28571059)
 
 <br>
 
