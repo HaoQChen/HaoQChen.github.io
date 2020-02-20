@@ -168,6 +168,10 @@ file(COPY ./voice/libs/X64/ DESTINATION ./)
 target_link_libraries(awaken_asr ${PROJECT_BINARY_DIR}/libmsc.so libasound.so)
 ```
 
+## 将参数传递到cpp中
+
+[cmake教程5-macro宏定义以及传递参数给源文件](https://blog.csdn.net/haluoluo211/article/details/80861543)这个文件中讲了如何通过`.h.in头文件`传递版本号以及通过`option`来传递，另外可以通过`add_definitions(-DPROJECT_DIR="${PROJECT_SOURCE_DIR}")`，然后直接`std::string dir = (std::string)PROJECT_DIR `
+
 # 参考
 <https://www.cnblogs.com/narjaja/p/9533169.html>
 

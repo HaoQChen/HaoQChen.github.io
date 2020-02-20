@@ -73,6 +73,23 @@ find：使用find命令搜索文件，使用它的-name参数指明文件后缀�
 * **删除空文件夹**：
 `find -type d -empty `
 
+### 2.1.2 文件格式转换
+
+Windows下的文件格式（中文主要是gb2312）在Linux下（主要是UTF-8）有时候是会乱码的，`enca`这个命令行小工具可以帮助我们检测原来的文件格式是什么，还能帮我们进行格式转换
+
+安装工具：
+
+`sudo apt-get install enca`
+
+用法：
+
+`enca -L zh_CN file_path`：检查文件的编码
+
+`enca -L zh_CN -x UTF-8 file_path`：将文件编码转换为`UTF-8`编码
+
+`enca -L zh_CN -x UTF-8 < file1 > file2`：转换为`UTF-8`编码，并复制到新的文件。
+
+
 # 参考
 
 <br>
