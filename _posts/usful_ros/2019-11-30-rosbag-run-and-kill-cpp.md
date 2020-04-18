@@ -68,7 +68,7 @@ if (it != v_nodes.end()){
 ```
 这样刚才那个弹框就会消失，录包成功。这里先利用ROS master来判断是否存在这个录包节点，如果存在，调用`rosnode kill`来终止这个node。
 
-如果存在`namespace`请在名字中加上相应前缀`std::string ns = nh_->getNamespace() + std::string("/");`
+如果存在`namespace`请在名字中加上相应前缀`std::string ns = nh_->getNamespace() + std::string("/");`。如果不存在ns，记得在`node_name`前面加上`/`前缀，表示节点是全局ns下的。
 
 # 参考
 
