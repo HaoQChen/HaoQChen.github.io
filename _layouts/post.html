@@ -4,10 +4,6 @@ layout: default
 <!-- canvas-nest.min.js -->
 <!-- <script type="text/javascript" src="../../../../js/canvas-nest.min.js"></script> -->
 
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
@@ -24,18 +20,17 @@ layout: default
 
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
-                <!-- Language Selector -->
-                <select class="sel-lang" onchange="onLanChange(this.options[this.options.selectedIndex].value)">
-                    <option value="0" selected> 中文 Chinese </option>
-                    <option value="1"> 英文 English </option>
-                </select>
+                    <!-- Language Selector -->
+                    <select class="sel-lang" onchange="onLanChange(this.options[this.options.selectedIndex].value)">
+                        <option value="0" selected> 中文 Chinese </option>
+                        <option value="1"> 英文 English </option>
+                    </select>
                 {% endif %}
 
                 {{ content }}
 
-                <!-- 打赏功能 -->
+                <!-- 打赏功能start -->
                 <link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
-                
                 <div>
                     <hr>
                     <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
@@ -58,8 +53,9 @@ layout: default
                     </div>
                     <hr>     
                 </div>
+                <!-- 打赏功能end -->
 
-                <!-- 前后一篇文章 -->
+                <!-- 前后一篇文章start -->
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     {% if page.previous.url %}
@@ -83,153 +79,93 @@ layout: default
                 </ul>
                 <hr style="visibility: hidden;">
                 <hr>
+                <!-- 前后一篇文章end -->
 
 
                 <!--Gitalk评论start  -->
                 {% if site.gitalk.enable %}
-                <!-- 引入Gitalk评论插件  -->
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-                <div id="gitalk-container"></div>
-                <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
-                <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
-                <script src="{{ site.baseurl }}/js/md5.min.js"></script>
-                <script type="text/javascript">
-                    var gitalk = new Gitalk({
-                        clientID: '{{site.gitalk.clientID}}',
-                        clientSecret: '{{site.gitalk.clientSecret}}',
-                        repo: '{{site.gitalk.repo}}',
-                        owner: '{{site.gitalk.owner}}',
-                        admin: ['{{site.gitalk.admin}}'],
-                        distractionFreeMode: {{ site.gitalk.distractionFreeMode }},
-                    id: md5(location.pathname),
-                    });
-                    gitalk.render('gitalk-container');
-                </script>
+                    <!-- 引入Gitalk评论插件  -->
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+                    <div id="gitalk-container"></div>
+                    <!-- 引入一个生产md5的js，用于对id值进行处理，防止其过长 -->
+                    <!-- Thank DF:https://github.com/NSDingFan/NSDingFan.github.io/issues/3#issuecomment-407496538 -->
+                    <script src="{{ site.baseurl }}/js/md5.min.js"></script>
+                    <script type="text/javascript">
+                        var gitalk = new Gitalk({
+                            clientID: '{{site.gitalk.clientID}}',
+                            clientSecret: '{{site.gitalk.clientSecret}}',
+                            repo: '{{site.gitalk.repo}}',
+                            owner: '{{site.gitalk.owner}}',
+                            admin: ['{{site.gitalk.admin}}'],
+                            distractionFreeMode: '{{site.gitalk.distractionFreeMode}}',
+                            id: md5(location.pathname),
+                        });
+                        gitalk.render('gitalk-container');
+                    </script>
                 {% endif %}
                 <!-- Gitalk end -->
-
-
-                {% if site.disqus_username %}
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
-                {% endif %}
-
-                {% if site.netease_comment %}
-                <!-- 网易云跟帖 评论框 start -->
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <!-- 网易云跟帖 评论框 end -->
-                {% endif %}
             </div>
 
             <!-- Side Catalog Container -->
             {% if page.catalog %}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
+                <div class="
+                    col-lg-2 col-lg-offset-0
+                    visible-lg-block
+                    sidebar-container
+                    catalog-container">
+                    <div class="side-catalog">
+                        <hr class="hidden-sm hidden-xs">
+                        <h5>
+                            <a class="catalog-toggle" href="#">CATALOG</a>
+                        </h5>
+                        <ul class="catalog-body"></ul>
+                    </div>
                 </div>
-            </div>
             {% endif %}
-
-            <!-- Sidebar Container not used-->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                <!-- {% include featured-tags.html bottom=true %} -->
-
-                <!-- Friends Blog -->
-                <!-- {% include friends.html %} -->
-            </div>
         </div>
     </div>
 </article>
 
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
-{% include mathjax_support.html %}
+    {% include mathjax_support.html %}
 {% endif %}
 
-{% if site.netease_comment %}
-<!-- 网易云跟帖JS代码 start -->
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-    var cloudTieConfig = {
-        url: document.location.href,
-        sourceId: "",
-        productKey: "de25fc98a6fe48b3bc8a7ae765da99a0",
-        target: "cloud-tie-wrapper"
-    };
-    var yunManualLoad = true;
-    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script>
-<!-- 网易云跟帖JS代码 end -->
-{% endif %}
-
-
-{% if site.disqus_username %}
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
-
-    (function () {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-{% endif %}
 
 
 {% if site.anchorjs %}
-<!-- async load function -->
-<script>
-    function async(u, c) {
-        var d = document, t = 'script',
-            o = d.createElement(t),
-            s = d.getElementsByTagName(t)[0];
-        o.src = u;
-        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-        s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
-        anchors.options = {
-            visible: 'always',
-            placement: 'right',
-            icon: ''
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link {
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top: -0.1em;
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
         }
-    }
-</style>
+    </script>
+    <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+    <script>
+        async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+            anchors.options = {
+                visible: 'always',
+                placement: 'right',
+                icon: ''
+            };
+            anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+        })
+    </script>
+    <style>
+        /* place left on bigger screen */
+        @media all and (min-width: 800px) {
+            .anchorjs-link {
+                position: absolute;
+                left: -0.75em;
+                font-size: 1.1em;
+                margin-top: -0.1em;
+            }
+        }
+    </style>
 {% endif %}

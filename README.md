@@ -163,6 +163,8 @@ bundle install
 bundle exec jekyll serve
 ```
 
+**注：** 因为其他原因更新了Ruby，导致运行的时候出现了一个问题：`Could not find rubyzip-2.0.0 in any of the sources`，运行`sudo bundle update`更新相关版本后可以正常运行。
+
 ## 域名
 尝试买了一个域名，想让百度搜索引擎能爬到，然后在coding.me上也弄一个类似github pages的，将百度或者国内的重定向到coding.me，最后放弃。目前域名全部重定向到给github pages，但github.io的域名就不能用了～～～～而且登记搜索引擎等等这些又要重新弄，很烦。
 
