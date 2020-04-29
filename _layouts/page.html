@@ -7,14 +7,14 @@ layout: default
 
 <!-- Main Content -->
 <div class="container">
-	<div class="row">
+	  <div class="row">
         {% if site.sidebar == false %}
-<!-- NO SIDEBAR -->
-    <!-- PostList Container -->
+            <!-- NO SIDEBAR -->
+            <!-- PostList Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
                 {{ content }}
             </div>
-    <!-- Sidebar Container -->
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
@@ -26,18 +26,18 @@ layout: default
             </div>
         {% else %}
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			{{ content }}
-    		</div>
-    <!-- Sidebar Container -->
+            <!-- USE SIDEBAR -->
+            <!-- PostList Container -->
+            <div class="
+                    col-lg-8 col-lg-offset-1
+                    col-md-8 col-md-offset-1
+                    col-sm-12
+                    col-xs-12
+                    postlist-container
+                ">
+              {{ content }}
+            </div>
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
@@ -54,30 +54,30 @@ layout: default
                 <!-- Category List -->
                 {% include category-list.html %}
 
-    		</div>
+    		    </div>
         {% endif %}
-	</div>
+	  </div>
 </div>
 
 {% if site.page-mathjax %}
-<!-- Add support for Mathjax by Voleking-->
-<!-- If you want to see formulars well in post preview, Maybe you should add this.-->
-<!-- However, most of the time formulars may not appear in the post preview, you can delete it.-->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true,
-    }
-  });
-</script>
-<script type="text/javascript"
+    <!-- Add support for Mathjax by Voleking-->
+    <!-- If you want to see formulars well in post preview, Maybe you should add this.-->
+    <!-- However, most of the time formulars may not appear in the post preview, you can delete it.-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                }
+            },
+            tex2jax: {
+                inlineMath: [ ['$','$'] ],
+                displayMath: [ ['$$','$$'] ],
+                processEscapes: true,
+            }
+        });
+    </script>
+    <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+    </script>
 {% endif %}

@@ -54,9 +54,14 @@ cat /proc/cpuinfo | grep flags
   watch -n 2 nvidia-smi
   ```
   其中`watch -n`表示刷新频率，2表示2秒刷新一次，表中的含义可以参考这个博客：[Linux查看GPU信息和使用情况](https://blog.csdn.net/dcrmg/article/details/78146797)
+
+
 # 2. 命令行
+
 ## 2.1 文件管理
+
 ### 2.1.1 删除文件
+
 * **删除相同后缀**：
 示例：一次性删除某目录及其子目录下所有以.exe为后缀的文件。
 `find . -name '*.exe' -type f -print -exec rm -rf {} \;`
