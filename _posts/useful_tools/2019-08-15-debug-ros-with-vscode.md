@@ -49,7 +49,7 @@ VSCode中是以`workspace`的概念处理文件关联的，每个`workspace`文�
 
 在VSCode中需要在.vscode文件夹中配置好`tasks.json`文件(没有的话可自己新建一个)后，就可以按`Ctrl + Shift + B`快捷键（这个快捷键需要将task归到build的group里才行，普通的task要`Ctrl + Shift + P`选`Run Task`），并选择相关的任务进行编译等操作。
 
-![](images/vscode_runtask.png)
+![](/img/in_post/debug_ros_with_vscode/vscode_runtask.png)
 
 下面展示的配置文件主要配置了`prerun`、`catkin build`、`catkin clean`以及`ccb`四个任务。下面简介一些用到的变量，详情请看[VSCode的tasks页面][VSCode_tasks]。将鼠标停留在相关变量上也可以看到。
 
@@ -147,7 +147,7 @@ VSCode中是以`workspace`的概念处理文件关联的，每个`workspace`文�
 
 + **name**
   任务的名字，该名字会在VSCode的Debug中显示，用户可选择需要调试的任务。
-  ![](images/vscode_debug_name.png)
+  ![](/img/in_post/debug_ros_with_vscode/vscode_debug_name.png)
 
 + **tpye**
   调试器名称。
