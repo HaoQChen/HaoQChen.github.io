@@ -6,7 +6,7 @@ date:       2019-08-15
 author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
-categories:  
+categories:  ROS实用小细节
 tags:
     - 
     - 
@@ -38,14 +38,14 @@ tags:
 
 # 2. debug原理及配置
 
-# 2.1 debug原理
+## 2.1 debug原理
 VSCode中是以`workspace`的概念处理文件关联的，每个`workspace`文件夹下会有一个`.vscode`文件夹，该文件夹下放置的是关于该`workspace`的路径配置、任务配置、运行配置等文件，我们正是通过编辑这些配置文件实现对工程的管理。
 
 微软提供的[C/C++插件][cpp_plugin]集成了gdb调试功能，并提供变量界面显示以及断点、监视以及调用堆栈等功能。你只需要在.vscode文件夹中配置好`launch.json`，就可以按下`F5`快捷键启动相应调试。
 
 由于目前并没有集成的ROS调试器，所以只能将每一个node当成一个CPP程序来进行调试。
 
-# 2.2 编译配置
+## 2.2 编译配置
 
 在VSCode中需要在.vscode文件夹中配置好`tasks.json`文件(没有的话可自己新建一个)后，就可以按`Ctrl + Shift + B`快捷键（这个快捷键需要将task归到build的group里才行，普通的task要`Ctrl + Shift + P`选`Run Task`），并选择相关的任务进行编译等操作。
 
@@ -141,7 +141,7 @@ VSCode中是以`workspace`的概念处理文件关联的，每个`workspace`文�
 }
 ```
 
-# 2.3 debug配置
+## 2.3 debug配置
 
 主要是配置`launch.json`，这里只介绍几个常用参数，详细请参考[VSCode中关于Debugging的介绍][VSCode_debugging]
 
@@ -217,7 +217,7 @@ VSCode中是以`workspace`的概念处理文件关联的，每个`workspace`文�
 }
 ```
 
-# 2.4 多任务调试
+## 2.4 多任务调试
 
 根据[VSCode中关于Debugging的介绍][VSCode_debugging]，可以启动完一个任务后再启动另外一个即可同时debug多个。
 
