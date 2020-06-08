@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      C++各种循环方式梳理及对比
+title:      C++各种循环方式梳理及对比（1）
 subtitle:   
 date:       2020-05-08
 author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
 categories: 深入理解C++
-published: false
+published: true
 tags:
     - 
     - 
@@ -18,7 +18,7 @@ tags:
 
 # 0. 写在最前面
 
-本文持续更新地址：<https://haoqchen.site/2020/05/08/all-kind-of-loop/>
+本文持续更新地址：<https://haoqchen.site/2020/05/08/all-kind-of-loop-1/>
 
 在学习的过程中发现C++有各种各样的循环方式，比如最基本的:
 
@@ -239,6 +239,8 @@ _Z7getSizev:
 3. 对比,2.1和2.2可以发现，将i放在循环内还是循环外，在现代编译器看来都是一样的。
 
 # 参考
+
++ 文中用到的一些链接
 
 <br>
 
