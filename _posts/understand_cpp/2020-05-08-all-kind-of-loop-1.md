@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      C++各种循环方式梳理及对比（1）
+title:      C++各种循环方式梳理及对比之深入到汇编看while和for
 subtitle:   
 date:       2020-05-08
 author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
-categories: 深入理解C++
+categories: C++深入浅出
 published: true
 tags:
     - 

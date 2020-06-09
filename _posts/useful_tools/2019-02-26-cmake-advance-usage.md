@@ -158,6 +158,20 @@ file(COPY ./dlib/data/ DESTINATION ./dlib_models)
 
 这样子就可以将源文件目录下的一些模型（data文件夹内所有）复制到生成二进制文件的dlib_models目录了。
 
+ROS的安装资源：
+
+```cmake
+install(DIRECTORY resources/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/resources
+)
+
+install(DIRECTORY script/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/script USE_SOURCE_PERMISSIONS
+)
+```
+
+需要注意的是，如果想要将文件的权限也安装到系统，比如可执行的一些脚本，需要加上`USE_SOURCE_PERMISSIONS`
+
 ## 常用宏变量
 * **`PROJECT_BINARY_DIR `**：由`project`命令生成，指向build目录的绝对路径
 * **`PROJECT_SOURCE_DIR`**：由`project`命令生成，指向CMakeLists目录绝对路径。

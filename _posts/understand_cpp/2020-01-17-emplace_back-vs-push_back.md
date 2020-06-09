@@ -6,7 +6,7 @@ date:       2020-01-17
 author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
-categories:  深入理解C++
+categories:  C++深入浅出
 tags:
     - 
     - 
