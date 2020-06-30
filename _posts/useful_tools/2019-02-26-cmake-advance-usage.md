@@ -184,7 +184,55 @@ target_link_libraries(awaken_asr ${PROJECT_BINARY_DIR}/libmsc.so libasound.so)
 
 ## 将参数传递到cpp中
 
-[cmake教程5-macro宏定义以及传递参数给源文件](https://blog.csdn.net/haluoluo211/article/details/80861543)这个文件中讲了如何通过`.h.in头文件`传递版本号以及通过`option`来传递，另外可以通过`add_definitions(-DPROJECT_DIR="${PROJECT_SOURCE_DIR}")`，然后直接`std::string dir = (std::string)PROJECT_DIR `
+[cmake教程5-macro宏定义以及传递参数给源文件](https://blog.csdn.net/haluoluo211/article/details/80861543)这个文件中讲了如何通过`.h.in头文件`传递版本号以及通过`option`来传递。
+
++ **通过VERSION宏**
+  ```cmake
+  # cmake中
+  cmake_policy(SET CMP0048 NEW) # for version
+  project(project_name VERSION 1.0.0)
+
+  configure_file(
+    "${PROJECT_SOURCE_DIR}/src/config.h.in"
+    "${PROJECT_BINARY_DIR}/config.h"
+  )
+  ```
+
+  ```cpp
+  // config.h.in中
+  #define MY_VERSION_MAJOR @PROJECT_VERSION_MAJOR@
+  #define MY_VERSION_MINOR @PROJECT_VERSION_MINOR@
+  #define MY_VERSION_PATCH @PROJECT_VERSION_PATCH@
+  #define MY_VERSION @PROJECT_VERSION@
+
+  // .cpp中
+  #include "config.h"
+  std::cout << "current version is: " << std::endl;
+  ```
+
++ **通过option**
+  ```cmake
+  # cmake中
+  option(AUTO_TEST "build auto test exe" ON)
+  if(AUTO_TEST)
+    message("generating auto test...")
+  endif(AUTO_TEST)
+  ```
+
+  ```cpp
+  // config.h.in中
+  #cmakedefine01 AUTO_TEST
+
+  // .cpp中
+  #if AUTO_TEST
+    void autoTest(int test_index);
+  #endif
+  ```
+  
+  cmake时就可以`cmake -DAUTO_TEST=OFF`
+
++ **通过add_definitions**
+  另外可以通过`add_definitions(-DPROJECT_DIR="${PROJECT_SOURCE_DIR}")`，然后直接`std::string dir = (std::string)PROJECT_DIR `
 
 # 参考
 <https://www.cnblogs.com/narjaja/p/9533169.html>
