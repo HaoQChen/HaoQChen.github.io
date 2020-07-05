@@ -34,12 +34,14 @@ tags:
 #include "ros/ros.h"
 #include <signal.h>
 
+
 void MySigintHandler(int sig)
 {
     //这里主要进行退出前的数据保存、内存清理、告知其他节点等工作
     ROS_INFO("shutting down!");
     ros::shutdown();
 }
+
 
 int main(int argc, char** argv){
 //ros::init()
@@ -59,6 +61,22 @@ int main(int argc, char** argv){
     //该参数会在原有节点名字的后面添加一些随机数来使每个节点独一无二
     //ros::init(argc, argv, "my_node_name", ros::init_options::AnonymousName);
 
+    //如果是多机系统，可以使用另外一个版本的init函数，函数定义见下面的地址
+    //http://docs.ros.org/api/roscpp/html/namespaceros.html#a61a193529a9aad90ddace7724c7fc759
+    //master_url默认是http://localhost:11311，多机连接可以看下面这个教程
+    //https://blog.csdn.net/lisfaf/article/details/90444541
+    //std::map<std::string, std::string> remappings;
+    //remappings["__master"] = master_url;
+    //remappings["__hostname"] = host_url;
+    //ros::init(remappings, "ist_node");
+
+//rosmaster
+    if (!ros::master::check()){
+        printf("There is no master, please run roscore first\n");
+        return -1;
+    }
+    // ros::master::check函数需要在ros::init之后调用
+
 //ros::NodeHandle
     /**
       * NodeHandle is the main access point to communications with the ROS system.
@@ -77,6 +95,7 @@ int main(int argc, char** argv){
     signal(SIGINT, MySigintHandler);
     //覆盖原来的Ctrl+C中断函数，原来的只会调用ros::shutdown()
     //为你关闭节点相关的subscriptions, publications, service calls, and service servers，退出进程
+    //注意，不是所有的退出都会有SIGINT信号，比如调用rosnode kill来杀节点就不会有这个信号，但ros::ok()会变false
 
 //run status
     int sec = 0;
@@ -105,6 +124,8 @@ int main(int argc, char** argv){
 
 2. 如果5秒内按下了Ctrl+C，则会调用MySigintHandler，然后ros::shutdown();从终端信息我们可以看到，调用ros::shutdown();后，所有ROS服务已经不可以使用，连ROS_INFO也是不能用的，输出信息失败。所以在程序中要密切注意退出部分的程序不要使用ROS的东西。
 ![within5s](/img/in_post/ROS_node_init/within5s.png)
+3. 如果5秒内在另外一个终端运行`rosnode kill /ist_node`，则不会有`SIGINT`信号触发`MySigintHandler`直接`ros::ok`不成立退出。
+![](../../img/in_post/ROS_node_init/rosnode_kill.png)
 
 # 参考
 [ROS官网：编写简单的消息发布器和订阅器 (C++)](http://wiki.ros.org/cn/ROS/Tutorials/WritingPublisherSubscriber%28c%2B%2B%29)  
@@ -114,6 +135,7 @@ int main(int argc, char** argv){
 
   
 <br>
+
 **喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
 
 **版权声明：本文为白夜行的狼原创文章，未经允许不得以任何形式转载**
