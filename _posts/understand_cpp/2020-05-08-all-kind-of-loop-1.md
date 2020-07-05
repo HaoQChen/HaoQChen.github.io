@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      C++各种循环方式梳理及对比之深入到汇编看while和for
+title:      C++各种循环方式梳理及对比（1）深入到汇编看while和for
 subtitle:   
 date:       2020-05-08
 author:     白夜行的狼
@@ -20,6 +20,10 @@ tags:
 
 本文持续更新地址：<https://haoqchen.site/2020/05/08/all-kind-of-loop-1/>
 
+第二篇持续更新地址：[C++各种循环方式梳理及对比（2）高级循环](https://haoqchen.site/2020/06/08/all-kind-of-loop-2/)
+
+整理这两篇东西花了快一个周末，觉得还不错给个赞呗
+
 在学习的过程中发现C++有各种各样的循环方式，比如最基本的:
 
 + for
@@ -27,10 +31,10 @@ tags:
 
 后面增加的：
 
-+ [std::for_each](http://www.cplusplus.com/reference/algorithm/for_each/)
-+ [基于范围的for循环](https://zh.cppreference.com/w/cpp/language/range-for)
-+ [std::for_each_n](https://zh.cppreference.com/w/cpp/algorithm/for_each_n)
-+ [std::transform](http://www.cplusplus.com/reference/algorithm/transform/)
++ [std::for_each](https://en.cppreference.com/w/cpp/algorithm/for_each)
++ [Range-based for loop (since C++11)](https://en.cppreference.com/w/cpp/language/range-for)
++ [std::for_each_n](https://en.cppreference.com/w/cpp/algorithm/for_each_n)
++ [std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
 
 这些循环方式各有特点，调用方式也不同。本文将整理他们的异同，并尝试比较他们的效率。很多情况下，程序80%的时间会被20%的代码消耗，而这20%的代码多为循环。
 
@@ -51,9 +55,11 @@ tags:
    ```
 3. 对于现代编译器，将i写在循环外和循环内没有区别
 
-# 2. for与while
+# 2. for与while的性能
 
 ## 2.1 for与while的区别
+
+用《C++ Primer Plus》的话来说，`while循环是没有初始化和更新部分的for循环，它只有测试条件和循环体`。
 
 测试代码：
 

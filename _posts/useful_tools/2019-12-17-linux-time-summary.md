@@ -60,7 +60,7 @@ struct timeval t_start, t_end;
 gettimeofday(&t_start, NULL);
 do_something();
 gettimeofday(&t_end, NULL);
-long int time_cost = (t_start.tv_sec - t_end.tv_sec) * 1000 + (t_start.tv_usec - t_end.tv_usec) / 1000
+long int time_cost = (t_start.tv_sec - t_end.tv_sec) * 1000 + (t_start.tv_usec - t_end.tv_usec) / 1000;
 printf("Cost time: %ld ms\n", time_cost);
 ```
 
