@@ -7,7 +7,6 @@ author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
 categories:  C++深入浅出 
-publish: false
 tags:
     - 
     - 
