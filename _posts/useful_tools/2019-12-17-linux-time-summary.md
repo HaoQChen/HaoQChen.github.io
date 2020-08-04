@@ -37,7 +37,7 @@ tags:
 
 |项目|说明|备注|
 |:---:|:---|:---|
-|头文件|#include <sys/time.h>||
+|头文件|#include \<sys/time.h\>||
 |原型|int gettimeofday(struct timeval *tv, struct timezone *tz);||
 |功能|获取从`Epoch`（1970年1月1日00:00:00 UTC，到2038年会挂那个）到当前所经过的时间（不考虑闰秒）以及当前时区，分辨率达us||
 |return|成功返回0，失败返回-1，可通过errno查看错误码||
@@ -68,7 +68,7 @@ printf("Cost time: %ld ms\n", time_cost);
 
 |项目|说明|备注|
 |:---:|:---|:---|
-|头文件|#include <sys/times.h>||
+|头文件|#include \<sys/times.h\>||
 |原型|clock_t times(struct tms *buf);||
 |功能|返回当前进程的相关时间，包括用户时间，系统时间，子进程用户时间，子进程系统时间||
 |return|失败时返回-1，成功时返回过去某一时间点到现在经过的CPU计数，每秒的脉冲数用`sysconf(_SC_CLK_TCK)`获取|这个值可能溢出|
@@ -150,7 +150,7 @@ if (0 == clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_1)){
 
 |项目|说明|备注|
 |:---:|:---|:---|
-|头文件|#include <time.h>||
+|头文件|#include \<time.h\>||
 |原型|clock_t clock(void);||
 |功能|返回程序所用的处理器时间**近似**，也就是目前为止所用的CPU时间，是否包括sleep的时间与系统有关|在32位系统由于位数关系，约每72分钟循环一次|
 |return|返回CPU的时钟计数，错误返回-1。`clock_t`在我的系统下是`long int`，要获得时间，需要除以`CLOCKS_PER_SEC`||
@@ -169,7 +169,7 @@ if (0 == clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_1)){
 
 |项目|说明|备注|
 |:---:|:---|:---|
-|头文件|#include <ctime>||
+|头文件|#include \<ctime\>||
 |原型|std::time_t time( std::time_t *time );||
 |功能|返回日历时间，即从`Epoch`到当前所经过的秒数||
 |return|如上，失败时返回-1||
@@ -191,6 +191,30 @@ int tm_isdst
 如上所述，时间精确到秒。
 
 如果你想进一步转换成字符串描述，可以调用`char* asctime( const struct tm* time_ptr );`进行转换。
+
+**时间转字符串**
+
+```cpp
+#include <string>
+#include <time.h>
+#include <sstream>
+
+const std::string currentTime2String(void)
+{
+  time_t rawtime;
+  time(&rawtime);
+  struct tm buf;
+  localtime_r(&rawtime, &buf);
+  std::stringstream ss;
+  ss << (buf.tm_year + 1900);
+  ss << std::setfill('0') << std::setw(2) << buf.tm_mon;
+  ss << std::setfill('0') << std::setw(2) << buf.tm_mday;
+  ss << '_' << std::setfill('0') << std::setw(2) << buf.tm_hour;
+  ss << std::setfill('0') << std::setw(2) << buf.tm_min;
+  ss << std::setfill('0') << std::setw(2) << buf.tm_sec;
+  return ss.str();
+}
+```
 
 **参考：**
 + <http://www.enseignement.polytechnique.fr/informatique/INF478/docs/Cpp/en/cpp/chrono/c/time.html>
