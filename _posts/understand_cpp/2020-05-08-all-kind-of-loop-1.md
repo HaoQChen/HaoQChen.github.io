@@ -53,6 +53,12 @@ tags:
 
    }
    ```
+   但我更喜欢这样：
+   ```cpp
+   for (std::size_t i = 0, size = vec.size(); i < size; ++i){
+
+   }
+   ```
 3. 对于现代编译器，将i写在循环外和循环内没有区别
 
 # 2. for与while的性能

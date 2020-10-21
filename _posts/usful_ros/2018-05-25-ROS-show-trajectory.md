@@ -124,6 +124,8 @@ geometry_msgs/PoseStamped[] poses
 
 据说nav_msgs/Odometry也可以～～没时间研究了
 
+**注意**要将你的Fixed Frame选择为**my_frame**的坐标系才会显示。
+
 # 参考
 <http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Basic%20Shapes>  
 <http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Points%20and%20Lines>  

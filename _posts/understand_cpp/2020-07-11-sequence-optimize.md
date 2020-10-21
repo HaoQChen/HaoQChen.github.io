@@ -28,6 +28,8 @@ tags:
 
 # 1. 函数放在循环内VS函数放在循环外
 
+这有个官方的说法，叫**循环倒置（loop inversion）**
+
 例子：判断一组二维的点中有哪些是满足一定条件的，比如在一个box内：
 
 以下代码显示了关键代码，详细代码请参考[github sequence_optimize.cpp](https://github.com/HaoQChen/code_test/blob/master/sequence_optimize.cpp)这个文件
