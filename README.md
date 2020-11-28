@@ -304,34 +304,36 @@ p {
 
 需要修改`page.html`中的`col-lg-`、`col-lg-offset-`、`col-md-`、`col-md-offset-`参数，这几个参数的意思可以百度，大致是在不同屏幕分辨率时显示的比例，总数都是12。
 
-## 修改markerdown渲染器变成跟github一样
+## 修改markerdown渲染设置，使得支持代码折叠
 
-默认的渲染器不支持类似代码折叠等一些功能，而github的markerdown渲染器已经支持，可以修改默认渲染器：
+参考[jekyll的Markdown Options](https://jekyllrb.com/docs/configuration/markdown/)
 
-参考[jekyll-commonmark](https://github.com/jekyll/jekyll-commonmark):
-
-1. 在`Gemfile`中增加：
+在`_config.yaml`的markerdown设置中增加以下两项：
 
 ```
-group :jekyll_plugins do
-  gem 'jekyll-commonmark'
-end
+  parse_block_html: true   
+  parse_span_html: true   
 ```
 
-2. 修改`_config.yaml`中的渲染器：
+不过写折叠时要这么写：
 
 ```
-markdown: CommonMark
+<details>
+
+<summary markdown="span"><mark> CLICK ME </mark></summary>
+
+### yes, even hidden code blocks!
+
+~~~python
+print("1111 world!")
+~~~
+
+</details>
+
+<details>
 ```
 
-3. 自定义[插件](https://github.com/gjtorikian/commonmarker#extensions)及[选项](https://github.com/gjtorikian/commonmarker#options)：
-
-```
-commonmark:
-  options: ["SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table"]
-```
-
+要加上`markdown="span"`这个，也可以在`mark`这个标签后面再加上`<font color=blue>`等
 
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
