@@ -69,7 +69,7 @@ Ctrl + `打开Sublime Text的命令行，在其中输入以下命令并按下确
 
 <details>
 
-<summary> CLICK ME </summary>
+<summary markdown="span"> CLICK ME </summary>
 
 yes, even hidden code blocks!
 
@@ -81,7 +81,7 @@ print("1111 world!")
 
 <details>
 
-<summary> CLICK ME </summary>
+<summary markdown="span"> CLICK ME </summary>
 
 ~~~python
 print("1111 world!")
