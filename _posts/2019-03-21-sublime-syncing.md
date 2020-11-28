@@ -90,30 +90,6 @@ print("1111 world!")
 </details>
 
 
-<details><summary> CLICK ME </summary>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</details>
-
-
-<details>
-
-<summary> CLICK ME </summary>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</details>
-
-
 # 参考
 
 <br>
