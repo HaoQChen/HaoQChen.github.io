@@ -329,8 +329,6 @@ print("1111 world!")
 ~~~
 
 </details>
-
-<details>
 ```
 
 要加上`markdown="span"`这个，也可以在`mark`这个标签后面再加上`<font color=blue>`等
