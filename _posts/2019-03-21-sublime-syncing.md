@@ -81,6 +81,16 @@ for (int i = 0; i < 10; ++i)
 
 </details>
 
+<details><summary>CLICK ME</summary>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
+```
+
+</details>
+
 # 参考
 
 <br>
