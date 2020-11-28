@@ -50,7 +50,7 @@ plugins: [jekyll-paginate, jekyll-sitemap]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: CommonMark
 commonmark:
-  options: ["SMART", "FOOTNOTES"]
+  options: ["FOOTNOTES"]
   extensions: ["strikethrough", "autolink", "table", "tagfilter"]
   syntax_highlighter_opts:
     span:
