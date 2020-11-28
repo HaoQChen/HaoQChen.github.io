@@ -67,21 +67,9 @@ Ctrl + `打开Sublime Text的命令行，在其中输入以下命令并按下确
 喜欢的话帮我github点个赞呗。
 
 
-<details>
-  <summary><mark><font color=darkred>查看代码</font></mark></summary>
 
-#### yes, even hidden code blocks!
 
-```cpp 
-for (int i = 0; i < 10; ++i)
-{
-  std::cout << "test" << std::endl;
-}
-```
-
-</details>
-
-<details><summary>CLICK ME</summary>
+<details><summary> CLICK ME </summary>
 
 #### yes, even hidden code blocks!
 
@@ -92,7 +80,7 @@ print("hello world!")
 </details>
 
 
-<details><summary>CLICK ME</summary>
+<details><summary> CLICK ME </summary>
 <p>
 
 #### yes, even hidden code blocks!
