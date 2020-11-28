@@ -48,11 +48,10 @@ plugins: [jekyll-paginate, jekyll-sitemap]
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: CommonMarkGhPages
+markdown: CommonMark
 commonmark:
   options: ["SMART", "FOOTNOTES"]
   extensions: ["strikethrough", "autolink", "table", "tagfilter"]
-  input: GFM                            # use Github Flavored Markdown !important
   syntax_highlighter_opts:
     span:
       line_numbers: false

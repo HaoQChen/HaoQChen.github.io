@@ -308,28 +308,28 @@ p {
 
 默认的渲染器不支持类似代码折叠等一些功能，而github的markerdown渲染器已经支持，可以修改默认渲染器：
 
-参考[jekyll-commonmark-ghpages](https://github.com/github/jekyll-commonmark-ghpages):
+参考[jekyll-commonmark](https://github.com/jekyll/jekyll-commonmark):
 
 1. 在`Gemfile`中增加：
 
 ```
 group :jekyll_plugins do
-  gem 'jekyll-commonmark-ghpages'
+  gem 'jekyll-commonmark'
 end
 ```
 
 2. 修改`_config.yaml`中的渲染器：
 
 ```
-markdown: CommonMarkGhPages
+markdown: CommonMark
 ```
 
-3. 自定义插件及选项：
+3. 自定义[插件](https://github.com/gjtorikian/commonmarker#extensions)及[选项](https://github.com/gjtorikian/commonmarker#options)：
 
 ```
 commonmark:
   options: ["SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+  extensions: ["strikethrough", "autolink", "table"]
 ```
 
 
