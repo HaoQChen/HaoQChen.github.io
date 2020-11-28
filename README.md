@@ -304,6 +304,34 @@ p {
 
 需要修改`page.html`中的`col-lg-`、`col-lg-offset-`、`col-md-`、`col-md-offset-`参数，这几个参数的意思可以百度，大致是在不同屏幕分辨率时显示的比例，总数都是12。
 
+## 修改markerdown渲染器变成跟github一样
+
+默认的渲染器不支持类似代码折叠等一些功能，而github的markerdown渲染器已经支持，可以修改默认渲染器：
+
+参考[jekyll-commonmark-ghpages](https://github.com/github/jekyll-commonmark-ghpages):
+
+1. 在`Gemfile`中增加：
+
+```
+group :jekyll_plugins do
+  gem 'jekyll-commonmark-ghpages'
+end
+```
+
+2. 修改`_config.yaml`中的渲染器：
+
+```
+markdown: CommonMarkGhPages
+```
+
+3. 自定义插件及选项：
+
+```
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+```
+
 
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
