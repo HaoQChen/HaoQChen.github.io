@@ -69,15 +69,25 @@ Ctrl + `打开Sublime Text的命令行，在其中输入以下命令并按下确
 
 <details>
 
-<summary> CLICK ME &lt;/summary&gt;
+<summary> CLICK ME </summary>
 
-#### yes, even hidden code blocks!
+yes, even hidden code blocks!
 
-```python
+~~~python
 print("1111 world!")
-```
+~~~
 
-&lt;/details&gt;
+</details>
+
+<details>
+
+<summary> CLICK ME </summary>
+
+~~~python
+print("1111 world!")
+~~~
+
+</details>
 
 
 <details><summary> CLICK ME </summary>
