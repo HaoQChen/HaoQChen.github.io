@@ -54,9 +54,9 @@ plugins: [jekyll-paginate, jekyll-sitemap]
 #   extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 
 markdown: kramdown
-kramdown:
-  gfm_quirks: true
+kramdown:                
   input: GFM                            # use Github Flavored Markdown !important
+  html_to_native: true      
   syntax_highlighter_opts:
     span:
       line_numbers: false
