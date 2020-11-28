@@ -80,8 +80,9 @@ print("hello world!")
 </details>
 
 
-<details><summary> CLICK ME </summary>
-<p>
+<details>
+
+<summary> CLICK ME </summary>
 
 #### yes, even hidden code blocks!
 
@@ -89,8 +90,20 @@ print("hello world!")
 print("hello world!")
 ```
 
-</p>
 </details>
+
+
+<details>
+
+<summary> CLICK ME &lt;/summary&gt;
+
+#### yes, even hidden code blocks!
+
+```python
+print("1111 world!")
+```
+
+&lt;/details&gt;
 
 # 参考
 
