@@ -55,7 +55,9 @@ plugins: [jekyll-paginate, jekyll-sitemap]
 
 markdown: kramdown
 kramdown:                
-  input: GFM                            # use Github Flavored Markdown !important 
+  input: GFM                            # use Github Flavored Markdown !important
+  parse_block_html: true   
+  parse_span_html: true   
   syntax_highlighter_opts:
     span:
       line_numbers: false
@@ -63,8 +65,6 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-  #       parse_block_html: true   
-  # parse_span_html: true  
 
 # Gitalk
 gitalk:
