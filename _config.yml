@@ -56,7 +56,7 @@ plugins: [jekyll-paginate, jekyll-sitemap]
 markdown: kramdown
 kramdown:                
   input: GFM                            # use Github Flavored Markdown !important
-  html_to_native: true      
+  parse_block_html: true      
   syntax_highlighter_opts:
     span:
       line_numbers: false
