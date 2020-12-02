@@ -57,7 +57,6 @@ tags:
 
 + <https://en.cppreference.com/w/cpp/numeric/math>
 
-[$-\frac{\pi}{2}$, $\frac{\pi}{2}$]
 
 $-\frac{\pi}{2}$, $\frac{\pi}{2}$
 
