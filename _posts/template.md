@@ -25,20 +25,6 @@ tags:
 **你的[Star](https://github.com/HaoQChen/HaoQChen.github.io)是作者坚持下去的最大动力哦～～～**
 
 
-<details>
-  <summary><mark><font color=darkred>查看代码</font></mark></summary>
-
-#### yes, even hidden code blocks!
-
-```cpp 
-for (int i = 0; i < 10; ++i)
-{
-  std::cout << "test" << std::endl;
-}
-```
-
-</details>
-
 # 参考
 
 <br>

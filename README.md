@@ -331,7 +331,7 @@ print("1111 world!")
 </details>
 ```
 
-要加上`markdown="span"`这个，也可以在`mark`这个标签后面再加上`<font color=blue>`等
+要加上`markdown="span"`这个，也可以在`mark`这个标签后面再加上`<font color=blue>`等。另外代码类型的\`\`\`要换成~~~，不过我试过不换也行。
 
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”

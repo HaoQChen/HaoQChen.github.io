@@ -66,19 +66,6 @@ Ctrl + `打开Sublime Text的命令行，在其中输入以下命令并按下确
 
 喜欢的话帮我github点个赞呗。
 
-<details>
-
-<summary markdown="span"><mark> CLICK ME </mark></summary>
-
-### yes, even hidden code blocks!
-
-```python
-print("1111 world!")
-```
-
-</details>
-
-
 # 参考
 
 <br>

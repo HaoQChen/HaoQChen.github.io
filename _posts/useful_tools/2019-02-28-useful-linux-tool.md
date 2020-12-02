@@ -94,6 +94,11 @@ Windows下的文件格式（中文主要是gb2312）在Linux下（主要是UTF-8
 
 `enca -L zh_CN -x UTF-8 < file1 > file2`：转换为`UTF-8`编码，并复制到新的文件。
 
+## 2.2 依赖
+### 2.2.1 文件依赖
+
+`ldd ./your_program`将列出你的二进制程序依赖的库的地址
+
 
 # 参考
 
