@@ -57,6 +57,10 @@ tags:
 
 + <https://en.cppreference.com/w/cpp/numeric/math>
 
+[$-\frac{\pi}{2}$, $\frac{\pi}{2}$]
+
+$-\frac{\pi}{2}$, $\frac{\pi}{2}$
+
 <br>
 
 **喜欢我的文章的话Star一下呗[Star](https://github.com/HaoQChen/HaoQChen.github.io)**
