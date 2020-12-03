@@ -333,6 +333,18 @@ print("1111 world!")
 
 要加上`markdown="span"`这个，也可以在`mark`这个标签后面再加上`<font color=blue>`等。另外代码类型的\`\`\`要换成~~~，不过我试过不换也行。
 
+## 文章支持LaTeX渲染
+在`_includes`目录下有一个`mathjax_support.html`文件，这个文件里面的内容就是对LaTeX的支持，只要将这个文件include到对应的地址就可以支持，比如放在`post.html`中：
+
+```html
+<!-- add support for mathjax by HaoQChen-->
+{% if page.enable-mathjax %}
+{% include mathjax_support.html %}
+{% endif %}
+```
+
+原来的办法是在`_config.yml`中进行设置，然后所有文章打开支持，但这个渲染会比较耗时间，所以我在文章开头增加了一个选项`enable-mathjax: true`，你只要将他设置成true就可以对单篇文章打开支持了。
+
 ## @TODO
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
 * 能不能将给博客的点赞重定向到给github点赞

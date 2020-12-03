@@ -7,6 +7,7 @@ author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
 categories: 
+enable-mathjax: false
 tags:
     - 
     - 

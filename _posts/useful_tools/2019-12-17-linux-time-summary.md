@@ -7,6 +7,7 @@ author:     白夜行的狼
 header-img: img/black.jpeg
 catalog: true
 categories:  
+enable-mathjax: false
 tags:
     - 
     - 
@@ -35,12 +36,12 @@ tags:
 
 在终端下运行`man gettimeofday`可以看到其官方说明，我摘录一些重点：
 
-|项目|说明|备注|
-|:---:|:---|:---|
-|头文件|#include \<sys/time.h\>||
-|原型|int gettimeofday(struct timeval *tv, struct timezone *tz);||
-|功能|获取从`Epoch`（1970年1月1日00:00:00 UTC，到2038年会挂那个）到当前所经过的时间（不考虑闰秒）以及当前时区，分辨率达us||
-|return|成功返回0，失败返回-1，可通过errno查看错误码||
+|  项目  | 说明                                                                                                                | 备注 |
+| :----: | :------------------------------------------------------------------------------------------------------------------ | :--- |
+| 头文件 | #include \<sys/time.h\>                                                                                             |      |
+|  原型  | int gettimeofday(struct timeval *tv, struct timezone *tz);                                                          |      |
+|  功能  | 获取从`Epoch`（1970年1月1日00:00:00 UTC，到2038年会挂那个）到当前所经过的时间（不考虑闰秒）以及当前时区，分辨率达us |      |
+| return | 成功返回0，失败返回-1，可通过errno查看错误码                                                                        |      |
 
 其中`struct timeval`：
 
@@ -66,12 +67,12 @@ printf("Cost time: %ld ms\n", time_cost);
 
 ## 1.2 times
 
-|项目|说明|备注|
-|:---:|:---|:---|
-|头文件|#include \<sys/times.h\>||
-|原型|clock_t times(struct tms *buf);||
-|功能|返回当前进程的相关时间，包括用户时间，系统时间，子进程用户时间，子进程系统时间||
-|return|失败时返回-1，成功时返回过去某一时间点到现在经过的CPU计数，每秒的脉冲数用`sysconf(_SC_CLK_TCK)`获取|这个值可能溢出|
+|  项目  | 说明                                                                                                | 备注           |
+| :----: | :-------------------------------------------------------------------------------------------------- | :------------- |
+| 头文件 | #include \<sys/times.h\>                                                                            |                |
+|  原型  | clock_t times(struct tms *buf);                                                                     |                |
+|  功能  | 返回当前进程的相关时间，包括用户时间，系统时间，子进程用户时间，子进程系统时间                      |                |
+| return | 失败时返回-1，成功时返回过去某一时间点到现在经过的CPU计数，每秒的脉冲数用`sysconf(_SC_CLK_TCK)`获取 | 这个值可能溢出 |
 
 其中`tms`，单位都是CPU计数：
 ```cpp
@@ -85,12 +86,12 @@ struct tms {
 
 ## 1.3 clock_gettime
 
-|项目|说明|备注|
-|:---:|:---|:---|
-|头文件|#include \<time.h\>||
-|原型|int clock_gettime(clockid_t clk_id, struct timespec *tp);||
-|功能|获取系统某一时钟从`Epoch`到当前的时间，可精确到纳秒||
-|return|成功返回0，失败返回-1||
+|  项目  | 说明                                                      | 备注 |
+| :----: | :-------------------------------------------------------- | :--- |
+| 头文件 | #include \<time.h\>                                       |      |
+|  原型  | int clock_gettime(clockid_t clk_id, struct timespec *tp); |      |
+|  功能  | 获取系统某一时钟从`Epoch`到当前的时间，可精确到纳秒       |      |
+| return | 成功返回0，失败返回-1                                     |      |
 
 其中`timespec`：
 ```cpp
@@ -148,12 +149,12 @@ if (0 == clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_1)){
 
 同样可从man中看到相关说明
 
-|项目|说明|备注|
-|:---:|:---|:---|
-|头文件|#include \<time.h\>||
-|原型|clock_t clock(void);||
-|功能|返回程序所用的处理器时间**近似**，也就是目前为止所用的CPU时间，是否包括sleep的时间与系统有关|在32位系统由于位数关系，约每72分钟循环一次|
-|return|返回CPU的时钟计数，错误返回-1。`clock_t`在我的系统下是`long int`，要获得时间，需要除以`CLOCKS_PER_SEC`||
+|  项目  | 说明                                                                                                   | 备注                                       |
+| :----: | :----------------------------------------------------------------------------------------------------- | :----------------------------------------- |
+| 头文件 | #include \<time.h\>                                                                                    |                                            |
+|  原型  | clock_t clock(void);                                                                                   |                                            |
+|  功能  | 返回程序所用的处理器时间**近似**，也就是目前为止所用的CPU时间，是否包括sleep的时间与系统有关           | 在32位系统由于位数关系，约每72分钟循环一次 |
+| return | 返回CPU的时钟计数，错误返回-1。`clock_t`在我的系统下是`long int`，要获得时间，需要除以`CLOCKS_PER_SEC` |                                            |
 
 **注意：**
 + Linux中，返回的时间不包括wait子线程的时间，其他系统不确定。可通过`times`函数来获得
@@ -167,12 +168,12 @@ if (0 == clock_gettime(CLOCK_THREAD_CPUTIME_ID, &time_1)){
 
 ## 2.1 time
 
-|项目|说明|备注|
-|:---:|:---|:---|
-|头文件|#include \<ctime\>||
-|原型|std::time_t time( std::time_t *time );||
-|功能|返回日历时间，即从`Epoch`到当前所经过的秒数||
-|return|如上，失败时返回-1||
+|  项目  | 说明                                        | 备注 |
+| :----: | :------------------------------------------ | :--- |
+| 头文件 | #include \<ctime\>                          |      |
+|  原型  | std::time_t time( std::time_t *time );      |      |
+|  功能  | 返回日历时间，即从`Epoch`到当前所经过的秒数 |      |
+| return | 如上，失败时返回-1                          |      |
 
 一般情况下，我们需要的是时间描述，而不是一个干巴巴的秒数，所以会调用`struct tm * localtime (const time_t * timer);`函数将其转换成一个时间描述结构，其包括：
 
@@ -225,11 +226,11 @@ const std::string currentTime2String(void)
 ## 2.2 std::chrono时间库
 详见[chrono的CPPReference说明](http://www.cplusplus.com/reference/chrono/)，这个库主要提供三个时钟的获取和处理，这三个时钟被封装成类，并且都是通过返回当前的`time_point`时间节点来获得时间。在chrono库中，所有的时间节点都是相对于`Epoch`的
 
-|时钟类|特点|
-|:---:|:---|
-|steady_clock|1. 设计用于计算时间间隔<br>2. 计数间隔是稳定的，间隔1ns（官方说明的代码受double精度限制是us的）<br>3. 一般是系统启动的时间，且保证后面的时间永远不比前面得到的时间小|
-|system_clock|1. 设计用于表示真实时间，即日历时间，刻度为1个tick，_XTIME_NSECS_PER_TICK纳秒<br>2. 时间点可为负数<br>3. 系统中所有进程用该时钟，时间节点都是一样的<br>4. 可与`time_t`相互转换|
-|high_resolution_clock|1. 该时钟是系统中频率最高的<br>2. 该时钟有可能与上述两个时钟是一样的|
+|        时钟类         | 特点                                                                                                                                                                           |
+| :-------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     steady_clock      | 1. 设计用于计算时间间隔<br>2. 计数间隔是稳定的，间隔1ns（官方说明的代码受double精度限制是us的）<br>3. 一般是系统启动的时间，且保证后面的时间永远不比前面得到的时间小           |
+|     system_clock      | 1. 设计用于表示真实时间，即日历时间，刻度为1个tick，_XTIME_NSECS_PER_TICK纳秒<br>2. 时间点可为负数<br>3. 系统中所有进程用该时钟，时间节点都是一样的<br>4. 可与`time_t`相互转换 |
+| high_resolution_clock | 1. 该时钟是系统中频率最高的<br>2. 该时钟有可能与上述两个时钟是一样的                                                                                                           |
 
 **参考：**
 + [chrono的CPPReference说明](http://www.cplusplus.com/reference/chrono/)
