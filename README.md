@@ -349,6 +349,9 @@ print("1111 world!")
 * 最下面增加“你可能感兴趣的文章，导向同一个分类的”
 * 能不能将给博客的点赞重定向到给github点赞
 * 代码高亮[GJXS1980的博客](https://github.com/GJXS1980/gjxs.github.io)
+* anchorjs，这个是锚点？
+* 移动端浏览器在派发点击事件的时候，通常会出现300ms左右的延迟。`fastclick`在检测到touchend事件的时候，会通过DOM自定义事件立即出发模拟一个click事件，并把浏览器在300ms之后真正的click事件阻止掉。缺点: 脚本相对较大
+* jquery.nav.js是一个侧边导航的东西，貌似没用到，又比较影响速度
 
 
 
