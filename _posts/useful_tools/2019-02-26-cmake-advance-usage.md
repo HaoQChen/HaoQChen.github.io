@@ -111,6 +111,37 @@ endif()
 ## 链接库目录:link_directories
 <https://haoqchen.site/2018/04/26/CMakeLists-setting-relative-path/>
 
+## 关于RPATH
+
+**RPATH**是run path的缩写，是Linux系统下，用于动态库或可执行文件寻找所依赖的动态库的路径
+
+可通过`readelf -d ./libxxx.so`可以看到这个.so的RPATH
+
+`ldd`是一个shell脚本，底层是调用`ld-linux.so`（elf动态库的装载器，会先于可执行程序运行）来实现功能，他可以列出可执行程序的dependency，
+
+`$ORIGIN`是一个特殊的RPATH，ld这个程序看到`$ORIGIN`时，就知道这是相对于可执行文件当前路径的，是一个相对路径，你可以随意将可执行文件和所依赖动态库拷贝到任何一个地方，只要他们的相对路径不变就行。如`set_target_properties(${PROJECT_NAME} PROPERTIES BUILD_RPATH :$ORIGIN/../lib)`，那ld就会去找可执行程序上一层目录的lib路径。这是**RPATH handling**中推荐的一种做法
+
+**RPATH**也有很多的细分，如：
++ CMAKE_INSTALL_RPATH – A semicolon-separated list specifying the RPATH to use in installed targets
++ CMAKE_SKIP_RPATH – If true, do not add run time path information
++ CMAKE_SKIP_BUILD_RPATH – Do not include RPATHs in the build tree
++ CMAKE_BUILD_WITH_INSTALL_RPATH – Use the install path for the RPATH
++ CMAKE_INSTALL_RPATH_USE_LINK_PATH – Add paths to linker search and installed RPATH
+MACOSX_RPATH – When this property is set to TRUE, the directory portion of the install_name field of this shared library will be @rpath unless overridden by INSTALL_NAME_DIR
+
+这些设置，可以使用 set_target_properties 单独设置在 target 上，也可以在加上 CMAKE_ 前缀后，设置成全局配置。
+
+By default if you don't change any RPATH related settings, CMake will link the executables and shared libraries with full RPATH to all used libraries in the build tree. When installing, it will clear the RPATH of these targets so they are installed with an empty RPATH. . When `MACOSX_RPATH` is set on macOS, then the install names for dylibs will include `@rpath/` as prefix.
+
+
+ld.so查找lib的顺序：
+
+1. RPATH： 在文件的 dynamic section(似乎可执行文件是这个，动态库的话是RUNPATH)，如果已经设置了`RUNPATH`则这个会被忽略
+2. LD_LIBRARY_PATH: 环境变量，比较常用
+3. RUNPATH： 在文件的 dynamic section，比较少用
+4. /etc/ld.so.cache
+5. 默认路径 /lib 和 /usr/lib
+
 ## 生成自己的静态、动态链接库
 `add_library(<name> [STATIC | SHARED | MODULE]
             [EXCLUDE_FROM_ALL]
@@ -235,7 +266,10 @@ target_link_libraries(awaken_asr ${PROJECT_BINARY_DIR}/libmsc.so libasound.so)
   另外可以通过`add_definitions(-DPROJECT_DIR="${PROJECT_SOURCE_DIR}")`，然后直接`std::string dir = (std::string)PROJECT_DIR `
 
 # 参考
-<https://www.cnblogs.com/narjaja/p/9533169.html>
++ <https://www.cnblogs.com/narjaja/p/9533169.html>
++ [Understanding RPATH (with CMake)](https://dev.my-gate.net/2021/08/04/understanding-rpath-with-cmake/)
++ [RPATH 简介以及 CMake 中的处理](https://blog.xizhibei.me/2021/02/12/a-brief-intro-of-rpath/)
++ [RPATH handling](https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/RPATH-handling)
 
 <br>
 
